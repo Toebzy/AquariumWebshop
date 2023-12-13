@@ -18,7 +18,6 @@ function App() {
   const routes = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout/>}>
-        <Route path="login" element={<LoginPage isAdmin={isAdmin}/>}/>
         <Route path="user" element={<UserPage isAdmin={isAdmin}/>}/>
         <Route path="admin" element={<AdminPage isAdmin={isAdmin}/>}/>
         <Route path="aquariums" element={<AquariumsPage isAdmin={isAdmin}/>}/>
@@ -45,7 +44,10 @@ function App() {
     facade.login(
       loginCredentials.username,
       loginCredentials.password,
-      setIsLoggedIn
+      () => {
+        setIsLoggedIn(true);
+        setShowLoginModal(false);
+      }
     );
   };
   const onChange = (evt) => {
@@ -60,7 +62,7 @@ function App() {
   
   return (
     <>
-       <div>
+      <div>
         <header>
           <div class="header_background">
             <div class="container container--1400">
@@ -94,17 +96,17 @@ function App() {
                   </button>
                 </div>
                 {showLoginModal && (
-        <div className="login-modal">
-          <form onChange={onChange}>
-            <input placeholder="User Name" id="username" />
-            <input placeholder="Password" id="password" type="password" />
-            <button onClick={performLogin}>Login</button>
-          </form>
-        </div>
-      )}
+                  <div className="login-modal">
+                    <form onChange={onChange}>
+                      <input placeholder="User Name" id="username" />
+                      <input placeholder="Password" id="password" type="password" />
+                      <button onClick={performLogin}>Login</button>
+                    </form>
+                  </div>
+                )}
               </div>
-              
-          </div>
+
+            </div>
           </div>
           <div class="under_header_background">
             <div class="container">
@@ -119,36 +121,36 @@ function App() {
             <div class="row">
               <h1>Login demo</h1>
 
-<form onChange={onChange}>
-          <input placeholder="User Name" id="username" />
-          <input placeholder="Password" id="password" />
-          <button onClick={performLogin}>Login</button>
-        </form>
+              <form onChange={onChange}>
+                <input placeholder="User Name" id="username" />
+                <input placeholder="Password" id="password" />
+                <button onClick={performLogin}>Login</button>
+              </form>
 
-        <div>
-          {isLoggedIn ? (
-            <div>
-              <p>Du er logget ind, {facade.getUserRoles()}</p>
-              <button onClick={() => facade.logout(setIsLoggedIn)}>
-                Log out
-              </button>
-              {dataFromServer.map((hotel) => (
-                <p key={hotel.id}>{hotel.hotelName}</p>
-              ))}
-            </div>
-          ) : (
-            <p>Log på for at være med i klubben, Mulle</p>
-          )}
-        </div>
+              <div>
+                {isLoggedIn ? (
+                  <div>
+                    <p>Du er logget ind, {facade.getUserRoles()}</p>
+                    <button onClick={() => facade.logout(setIsLoggedIn)}>
+                      Log out
+                    </button>
+                    {dataFromServer.map((hotel) => (
+                      <p key={hotel.id}>{hotel.hotelName}</p>
+                    ))}
+                  </div>
+                ) : (
+                  <p>Log på for at være med i klubben, Mulle</p>
+                )}
+              </div>
 
-              
+
             </div>
           </div>
-          
+
         </section>
- 
+
       </div>
-      <RouterProvider router={routes}/>
+      <RouterProvider router={routes} />
     </>
   );
 }
