@@ -17,7 +17,33 @@ function FishPage({isAdmin}) {
                 </div>
             </div>
         </li>
-        
+        <li className="product-list_product-item">
+            <div className="product-card">
+                <div className="product-card_image">
+                    <img src="https://images.freeimages.com/fic/images/icons/2770/ios_7_icons/512/fish.png" alt="fish" width="100" height="100"></img>
+                </div>
+                <div className="product-card_info">
+                    <h2 className="product-card_info_title">Fish2</h2>
+                    <p className="product-card_info_description">Fish2</p>
+                    <p className="product-card_info_price">Price: 1002</p>
+                    <button className="product-card_info_button">Add to cart</button>
+                </div>
+            </div>
+        </li>
+        <li className="product-list_product-item">
+            <div className="product-card">
+                <div className="product-card_image">
+                    <img src="https://images.freeimages.com/fic/images/icons/2770/ios_7_icons/512/fish.png" alt="fish" width="100" height="100"></img>
+                </div>
+                <div className="product-card_info">
+                    <h2 className="product-card_info_title">Fish3</h2>
+                    <p className="product-card_info_description">Fish3</p>
+                    <p className="product-card_info_price">Price: 1003</p>
+                    <button className="product-card_info_button">Add to cart</button>
+                </div>
+            </div>
+        </li>
+
         </div>
     );
 }
