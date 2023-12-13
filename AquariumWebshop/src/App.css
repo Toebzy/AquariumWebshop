@@ -1,3 +1,7 @@
+html{
+  overflow: scroll;
+    overflow-x: hidden;
+}
 @media (min-width: 992px){
   .header_inner{
     height: 150px;
@@ -43,13 +47,16 @@
   padding-bottom: 20px;
   margin-bottom: -27px;
   color:#fff;
-  font-size: 18px;
+  font-size: 16px;
 }
 a{
   text-decoration: none !important;
+  fill: #fff !important;
+  color: #fff !important;
 }
 .logo{
   display: block;
+  width: 200px;
 }
 .under_header{
   align-items: center;
@@ -57,38 +64,35 @@ a{
   display: flex;
   height: 40px;
   list-style: none;
+  font-weight: 400;
 }
 .under_header_background{
 
   top: 140px;
   width: 100%;
-  background-color: rgb(108, 108, 211);
+  background-color: rgb(156, 156, 240);
   height: 40px;
 }
 .header_buttons{
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
   margin-right: 0px;
   fill: #fff;
   text-align: center;
-  width: 180px;
-
+  width: 200px;
+  justify-content: flex-end;
 }
 .header_button{
   background-color: transparent;
   border: none;
   display: flex;
   flex-direction: column;
-  margin-left: 25px;
   padding: 0;
+  align-items: center;
   justify-content: center;
- 
+  width: 66px; 
 }
 .header__button-icon{
    width: 25px;  
-  margin-right: auto;
-  margin-left: auto;
 }
 .button_text{
   color: #fff;
