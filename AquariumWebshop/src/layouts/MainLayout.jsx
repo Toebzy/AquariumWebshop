@@ -1,21 +1,18 @@
 import { NavLink, Outlet } from "react-router-dom"
 import { useState, useEffect } from 'react';
 function MainLayout() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(false);
+
     return (
         <div id="page">
         <div id="container">
-        {isLoggedIn ? (
-        <>
-        {isAdmin && <NavLink to="admin">Admin page</NavLink>}
-        {!isAdmin && <NavLink to="user">User page</NavLink>}
-        {' | '}
-        </>
-    ) : (
-    <NavLink to="login">Login</NavLink>
-    )}
-        <NavLink to="fish">Fish page</NavLink> {' | '}
+    <nav class="navigation">
+                    <ul class="nav_list">
+                      <li class="nav-item"><NavLink to="fish">Fish page</NavLink></li>
+                      <li class="nav-item">Invertebrates</li>
+                      <li class="nav-item">Supplies</li>
+                      <li class="nav-item">Tanks</li>
+                    </ul>
+                  </nav>
         <NavLink to="invertebrates">Invertebrates page</NavLink> {' | '}
         <NavLink to="aquariums">Aquariums page</NavLink> {' | '}
         <NavLink to="supplies">Supplies page</NavLink> {' | '}

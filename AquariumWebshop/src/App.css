@@ -43,6 +43,8 @@
   padding-bottom: 20px;
   margin-bottom: -27px;
   color:#fff;
+  font-size: 18px;
+
 }
 .logo{
   display: block;
@@ -55,7 +57,7 @@
   list-style: none;
 }
 .under_header_background{
-  position: fixed;
+
   top: 140px;
   width: 100%;
   background-color: rgb(108, 108, 211);
@@ -67,13 +69,23 @@
   justify-content: flex-end;
   margin-right: 10px;
   fill: #fff;
+  text-align: center;
 }
 .header_button{
   background-color: transparent;
   border: none;
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+  padding: 0;
+  position: relative;
+  justify-content: center;
+ 
+}
+.header__button-icon{
+   width: 30px;  
   margin-right: auto;
   margin-left: auto;
-  margin-right: 30px;
 }
 .button_text{
   color: #fff;
@@ -149,4 +161,26 @@
 .product-card button:hover {
   background-color: #fff;
   color: #6369a0;
+}
+.login-modal{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 150px;
+  background-color: #fff;
+  border-radius: 18px;
+  display: flex;
+  right: 260px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.login_form{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 5px;
+  align-items: center;
+  justify-content: center; 
+}
+.login_form input{
+  margin: 9px;
 }
