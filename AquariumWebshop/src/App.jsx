@@ -56,7 +56,7 @@ function App() {
   return (
     <>
       <div>
-        <h1>Login demo</h1>
+        <h1>Login Demo</h1>
 
         <form onChange={onChange}>
           <input placeholder="User Name" id="username" />
