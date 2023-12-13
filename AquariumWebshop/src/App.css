@@ -1,0 +1,17 @@
+.product-list_product-item {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #f7fb06;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .li:hover {
+    background-color: rgb(152, 21, 21)030;
+  }
+  
+  .li.active {
+    background-color: rgb(35, 14, 99);
+}
