@@ -1,8 +1,23 @@
-import { useState, useEffect } from 'react';
 import './App.css';
+import { useState, useEffect } from 'react';
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
+import UserPage from './pages/UserPage';
+import AdminPage from './pages/AdminPage';
 import facade from './util/apiFacade';
 
 function App() {
+  const [isAdmin, setIsAdmin] = useState(false);
+  
+  const routes = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<MainLayout/>}>
+        <Route path="user" element={<UserPage isAdmin={isAdmin}/>}/>
+        <Route path="admin" element={<AdminPage isAdmin={isAdmin}/>}/>
+      </Route>
+    )
+  )
+
   const init = { username: '', password: '' };
   const [loginCredentials, setLoginCredentials] = useState(init);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -54,6 +69,7 @@ function App() {
           )}
         </div>
       </div>
+      <RouterProvider router={routes}/>
     </>
   );
 }
