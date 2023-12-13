@@ -1,6 +1,6 @@
 function SuppliesPage({isAdmin}) {
     return (
-        <div id="subpage">
+        <div class="content">
         <h1>Supplies page</h1>
         <p>SuppliesPage</p>
         </div>

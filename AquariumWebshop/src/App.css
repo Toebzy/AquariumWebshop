@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&family=Petrona&display=swap');
 html{
   overflow: scroll;
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 @media (min-width: 992px){
   .header_inner{
@@ -8,6 +9,7 @@ html{
   }
 }
 .search_and_nav{
+  font-family: 'Josefin Sans', sans-serif;
   min-width: 550px;
   max-width: 650px;
 }
@@ -51,14 +53,16 @@ html{
 }
 a{
   text-decoration: none !important;
-  fill: #fff !important;
+  fill:  rgb(156, 156, 240) !important;
   color: #fff !important;
 }
 .logo{
+  margin-top: 15px;
   display: block;
   width: 200px;
 }
 .under_header{
+  font-family: 'Josefin Sans', sans-serif;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -67,16 +71,17 @@ a{
   font-weight: 400;
 }
 .under_header_background{
-
+  color: rgb(32, 32, 116);
   top: 140px;
   width: 100%;
   background-color: rgb(156, 156, 240);
   height: 40px;
 }
 .header_buttons{
+  font-family: 'Josefin Sans', sans-serif;
+  margin-right: 20px;
   display: flex;
-  margin-right: 0px;
-  fill: #fff;
+  fill:  rgb(156, 156, 240);
   text-align: center;
   width: 200px;
   justify-content: flex-end;
@@ -95,10 +100,11 @@ a{
    width: 25px;  
 }
 .button_text{
-  color: #fff;
+  color:  rgb(156, 156, 240);
 }
 .content{
   margin-top: 30px;
+  text-align: center;
 }
 .product-list_product-item {
     display: inline-block;
@@ -125,7 +131,7 @@ a{
 }
 
 .product-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
   background-color: #1f4062;
 }
@@ -173,12 +179,22 @@ a{
   position: absolute;
   align-items: center;
   justify-content: center;
-  top: 150px;
+  top: 120px;
   background-color: #fff;
   border-radius: 18px;
   display: flex;
-  right: 260px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  right: 235px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+.login-modal button{
+  font-family: 'Josefin Sans', sans-serif;
+  border-radius: 8px;
+  border-color: rgb(32, 32, 116) ;
+  background-color: rgb(32, 32, 116);
+  color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.10);
+  font-weight: 400;
+  border-style: solid;
 }
 .login_form{
   display: flex;
@@ -190,4 +206,29 @@ a{
 }
 .login_form input{
   margin: 9px;
+}
+h1{
+  text-align: center;
+  font-size: 35px;
+}
+.arrow{
+  border-width: 0 0.5rem 0.5rem 0.5rem;
+  border-color: transparent;
+  border-style: solid;
+  border-bottom-color: #ffffff;
+  position: absolute;
+  top: -8px;
+}
+
+.bubble_left{
+  position: absolute;
+  left: 0;
+  opacity: 20%;
+  mask-image:linear-gradient(to right,  rgba(0,0,0,01), rgba(0,0,0,0));
+}
+.bubble_right{
+  position: absolute;
+  right: 0;
+  opacity: 20%;
+  mask-image:linear-gradient(to left,  rgba(0,0,0,01), rgba(0,0,0,0));
 }

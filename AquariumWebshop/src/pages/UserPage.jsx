@@ -1,6 +1,6 @@
 function UserPage({isAdmin}) {
     return (
-        <div id="subpage">
+        <div class="content">
         <h1>User page</h1>
         <p>This is for Users only.</p>
         </div>

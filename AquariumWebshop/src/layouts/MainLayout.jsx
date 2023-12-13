@@ -42,11 +42,13 @@ function MainLayout() {
         <div id="page">
             <header>
                 <div class="header_background">
+                <img class="bubble bubble_left" src="src\assets\images\bubbles.gif" width="10%" height="190" ></img>
+                <img class="bubble bubble_right" src="src\assets\images\bubbles.gif" width="10%" height="190" ></img>
                     <div class="container container--1400">
                         <div class="header_inner">
                             <NavLink to="/">
                                 <div class="logo">
-                                    <img src="src\assets\images\logo.png" width="140" ></img>
+                                    <img src="src\assets\images\logo.gif" width="140" ></img>
                                 </div>
                                 
                             </NavLink>
@@ -98,7 +100,9 @@ function MainLayout() {
 
                             </div>
                             {showLoginModal && (
+                                
                                 <div class="login-modal">
+                                    <div class="arrow"></div>
                                     <form class="login_form" onChange={onChange}>
                                         <input placeholder="User Name" id="username" />
                                         <input placeholder="Password" id="password" type="password" />

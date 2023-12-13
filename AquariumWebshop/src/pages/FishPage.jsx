@@ -1,6 +1,6 @@
 function FishPage({isAdmin}) {
     return (
-        <div id="subpage">
+        <div class="content">
         <h1>Fish page</h1>
         <p>FishPage</p>
 

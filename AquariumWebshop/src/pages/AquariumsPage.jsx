@@ -1,6 +1,6 @@
 function AquariumsPage({isAdmin}) {
     return (
-        <div id="subpage">
+        <div class="content">
         <h1>Aquariums page</h1>
         <p>AquariumsPage</p>
         </div>
