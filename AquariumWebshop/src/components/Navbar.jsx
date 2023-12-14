@@ -17,8 +17,11 @@ function MainLayout() {
     const performLogin = (evt) => {
       evt.preventDefault();
       facade.login(
-        loginCredentials.username,
-        loginCredentials.password,
+        //loginCredentials.username,
+        //loginCredentials.password,
+        'incorrectUsername',
+        'incorrectPassword',
+
         () => {
           setIsLoggedIn(true);
           setShowLoginModal(false);
@@ -114,8 +117,7 @@ function MainLayout() {
                                     <form class="login_form" onChange={onChange}>
                                         <input placeholder="User Name" id="username" />
                                         <input placeholder="Password" id="password" type="password" />     
-                                        {loginError && <div style={{ color: 'red' }}>{loginError}</div>}             
-                                        <h1> hey error here</h1>
+                                        {loginError && <div style={{ color: 'red' }}>{loginError}</div>}                                                 
                                         <button onClick={performLogin}>Login</button>
                                     </form>
                                 </div>
