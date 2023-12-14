@@ -17,11 +17,8 @@ function MainLayout() {
     const performLogin = (evt) => {
       evt.preventDefault();
       facade.login(
-        //loginCredentials.username,
-        //loginCredentials.password,
-        'incorrectUsername',
-        'incorrectPassword',
-
+        loginCredentials.username,
+        loginCredentials.password,
         () => {
           setIsLoggedIn(true);
           setShowLoginModal(false);
