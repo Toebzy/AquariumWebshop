@@ -139,11 +139,17 @@ a{
   box-shadow: 0 0 70px rgba(32, 32, 116, 0.4);
   background-color:  rgb(239, 242, 255);
 }
+.product-card_image{
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+   border-radius: 10px;
+}
 
 .product-card img {
   width: 200px;
   height: 200px;
-  border-radius: 10px;
   margin-bottom: 20px;
 }
 
