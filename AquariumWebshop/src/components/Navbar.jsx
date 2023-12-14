@@ -44,7 +44,8 @@ function MainLayout() {
       });
     };
     const toggleLoginModal = () => {
-      setShowLoginModal(!showLoginModal);
+        setLoginError(null);
+      setShowLoginModal(!showLoginModal);      
     };
 
         const funFactsList = [
@@ -97,6 +98,7 @@ function MainLayout() {
                                         <NavLink to="invertebrates"><li class="nav-item">Invertebrates</li></NavLink>
                                         <NavLink to="supplies"><li class="nav-item">Supplies</li></NavLink>
                                         <NavLink to="aquariums"><li class="nav-item">Tanks</li></NavLink>
+                                        <NavLink to="quiz"><li class="nav-item">Quiz</li></NavLink>
                                     </ul>
                                 </nav>
                             </div>
