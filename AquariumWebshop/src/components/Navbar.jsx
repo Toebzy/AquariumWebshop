@@ -46,6 +46,30 @@ function MainLayout() {
     const toggleLoginModal = () => {
       setShowLoginModal(!showLoginModal);
     };
+
+        const funFactsList = [
+          'Did you know that fish can recognize their owners?',
+          'The Clownfish is immune to the stinging tentacles of sea anemones.',
+          'Seahorses are the only fish species in which the males give birth.',
+          // Add more fun facts as needed
+        ];
+      
+        const [currentFunFactIndex, setCurrentFunFactIndex] = useState(0);
+      
+        useEffect(() => {
+          const intervalId = setInterval(() => {
+            // Change the fun fact every 10 seconds
+            setCurrentFunFactIndex((prevIndex) =>
+              prevIndex === funFactsList.length - 1 ? 0 : prevIndex + 1
+            );
+          }, 10000);
+      
+          return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+        }, [funFactsList.length]);
+      
+
+
+
     return (
         <div id="page">
             <header>
@@ -126,7 +150,7 @@ function MainLayout() {
                 <div class="under_header_background">
                     <div class="container">
                         <ul class="under_header">
-                            <li>omg jeg elsker fisk!!!</li>
+                            <li>{funFactsList[currentFunFactIndex]}</li>
                         </ul>
                     </div>
                 </div>
