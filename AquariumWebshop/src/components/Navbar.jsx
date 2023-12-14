@@ -8,7 +8,8 @@ function MainLayout() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [dataFromServer, setDataFromServer] = useState('Loading...');
     const [showLoginModal, setShowLoginModal] = useState(false);
-  
+    const [loginError, setLoginError] = useState(null);
+
     useEffect(() => {
       facade.fetchData('hotels', 'GET').then((data) => setDataFromServer(data));
     }, [isLoggedIn]);
@@ -21,7 +22,13 @@ function MainLayout() {
         () => {
           setIsLoggedIn(true);
           setShowLoginModal(false);
-        }
+          setLoginError(null);
+        },
+        (error) => {
+          console.error('Login failed:', error);
+          // Set an error state to display an error message
+          setLoginError('Invalid username or password');
+          }
       );
     };
     const performLogout = () => {
@@ -61,9 +68,9 @@ function MainLayout() {
                                 </div>
                                 <nav class="navigation">
                                     <ul class="nav_list">
-                                        <NavLink to="fish"><li class="nav-item">Fish page</li></NavLink>
+                                        <NavLink to="fish"><li class="nav-item">Fish</li></NavLink>
                                         <NavLink to="invertebrates"><li class="nav-item">Invertebrates</li></NavLink>
-                                        <NavLink to="supplies"><li class="nav-item">Supplies page</li></NavLink>
+                                        <NavLink to="supplies"><li class="nav-item">Supplies</li></NavLink>
                                         <NavLink to="aquariums"><li class="nav-item">Tanks</li></NavLink>
                                     </ul>
                                 </nav>
@@ -106,7 +113,9 @@ function MainLayout() {
                                     <div class="arrow"></div>
                                     <form class="login_form" onChange={onChange}>
                                         <input placeholder="User Name" id="username" />
-                                        <input placeholder="Password" id="password" type="password" />
+                                        <input placeholder="Password" id="password" type="password" />     
+                                        {loginError && <div style={{ color: 'red' }}>{loginError}</div>}             
+                                        <h1> hey error here</h1>
                                         <button onClick={performLogin}>Login</button>
                                     </form>
                                 </div>
