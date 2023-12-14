@@ -182,6 +182,7 @@ a{
   color: #6369a0;
 }
 .login-modal{
+  z-index: 10;
   position: absolute;
   align-items: center;
   justify-content: center;
