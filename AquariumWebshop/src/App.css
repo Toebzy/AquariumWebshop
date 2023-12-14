@@ -229,13 +229,13 @@ h1{
 .bubble_left{
   position: absolute;
   left: 0;
-  opacity: 20%;
+  opacity: 40%;
   mask-image:linear-gradient(to right,  rgba(0,0,0,01), rgba(0,0,0,0));
 }
 .bubble_right{
   position: absolute;
   right: 0;
-  opacity: 20%;
+  opacity: 40%;
   mask-image:linear-gradient(to left,  rgba(0,0,0,01), rgba(0,0,0,0));
 }
 .send-to-cart.cart-item {
