@@ -32,32 +32,30 @@ function apiFacade()
         return res.json()
     }
 
-    const login = (user, password, callback) =>
-    {
-        console.log("Jeg er fanget inde i login funktionen", user, password)
-
-        const payload = { username: user, password: password }
-
-        const options = makeOptions("POST", payload)
-
+    const login = (user, password, onSuccess, onError) => {
+        console.log("Jeg er fanget inde i login funktionen", user, password);
+      
+        const payload = { username: user, password: password };
+      
+        const options = makeOptions("POST", payload);
+      
         return fetch(URL + AUTHENTICATION_ROUTE, options)
-            .then(handleHttpErrors)
-            .then((json) =>
-            {
-                callback(true)
-                setToken(json.token)
-            })
-            .catch((error) =>
-            {
-                if (error.status)
-                {
-                    error.fullError.then(e => console.log(JSON.stringify(e)))
-                } else
-                {
-                    console.log("seriøs fejl", error)
-                }
-            })
-    }
+          .then(handleHttpErrors)
+          .then((json) => {
+            onSuccess(true);
+            setToken(json.token);
+          })
+          .catch((error) => {
+            if (error.status) {
+              error.fullError.then((e) => console.log(JSON.stringify(e)));
+              onError(false); // Call the error callback for failed login
+            } else {
+              console.log("seriøs fejl", error);
+              onError(false); // Call the error callback for failed login
+            }
+            throw error; // Propagate the error to indicate a failed login
+          });
+      };
 
     const fetchData = (endpoint, method, payload) =>
     {
