@@ -29,7 +29,6 @@ function App() {
         <Route path="quiz" element={<QuizPage isAdmin={isAdmin} />} />
         <Route path="/" element={<HomePage />}>
         </Route>
-
       </Route>
     )
   ) 

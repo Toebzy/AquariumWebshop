@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom"
 import { useState, useEffect } from 'react';
 import facade from '../util/apiFacade';
+import Slideshow from "./Slideshow";
 function MainLayout() {
     const init = { username: '', password: '' };
     const [loginCredentials, setLoginCredentials] = useState(init);
@@ -122,6 +123,10 @@ function MainLayout() {
                     </div>
                 </div>
             </header>
+            
+            <div className="slideshow">
+                <Slideshow />
+            </div>
 
             <div>
                 <Outlet />
