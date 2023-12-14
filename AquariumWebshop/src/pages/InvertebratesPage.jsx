@@ -1,4 +1,4 @@
-import Product from "../layouts/Product";
+import Product from "../components/Product";
 
 function InvertebratesPage(props) {
     const { onProductAdd} = props;

@@ -1,4 +1,4 @@
-import Slideshow from "./Slideshow";
+import Slideshow from "../components/Slideshow";
 
 function HomePage(){
     return (

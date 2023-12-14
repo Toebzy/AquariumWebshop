@@ -1,4 +1,4 @@
-import Product from "../layouts/Product";
+import Product from "../components/Product";
 
 function FishPage(props,{isAdmin}) {
     const { onProductAdd} = props;

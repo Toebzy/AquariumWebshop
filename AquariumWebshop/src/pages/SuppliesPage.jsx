@@ -1,4 +1,4 @@
-import Product from "../layouts/Product";
+import Product from "../components/Product";
 
 function SuppliesPage(props,{isAdmin}) {
     

@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, NavLink } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout';
+import MainLayout from './components/Navbar';
 import UserPage from './pages/UserPage';
 import AdminPage from './pages/AdminPage';
 import AquariumsPage from './pages/AquariumsPage';
@@ -9,7 +9,7 @@ import FishPage from './pages/FishPage';
 import InvertebratesPage from './pages/InvertebratesPage';
 import SuppliesPage from './pages/SuppliesPage';
 import QuizPage from './pages/QuizPage';
-import HomePage from './layouts/HomePage';
+import HomePage from './pages/HomePage';
 
 
 function App() {
