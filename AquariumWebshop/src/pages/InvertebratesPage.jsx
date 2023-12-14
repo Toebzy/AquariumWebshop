@@ -5,7 +5,7 @@ function InvertebratesPage(props) {
     return (
         <div class="content">
         <h1>Invertebrates page</h1>
-        <p>InvertebratesPage</p>
+        <p>no skellyton havers</p>
         <Product onProductAdd={onProductAdd} productName="Angelfish" productText="(Pterophyllum scalare)" productPrice="$7" productImage='src/assets/images/angelfish.png'/>
         <Product onProductAdd={onProductAdd} productName="Angelfish" productText="(Pterophyllum scalare)" productPrice="$7" productImage='src/assets/images/angelfish.png'/>
         <Product onProductAdd={onProductAdd} productName="Angelfish" productText="(Pterophyllum scalare)" productPrice="$7" productImage='src/assets/images/angelfish.png'/>
