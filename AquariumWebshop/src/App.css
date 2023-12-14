@@ -51,6 +51,10 @@ html{
   color:#fff;
   font-size: 16px;
 }
+.nav-item:hover{
+  color: rgb(156, 156, 240);
+  transform: scale(1.08);
+}
 a{
   text-decoration: none !important;
   fill:  rgb(156, 156, 240) !important;
