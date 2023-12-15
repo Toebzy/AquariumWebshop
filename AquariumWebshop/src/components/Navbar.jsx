@@ -139,7 +139,7 @@ function MainLayout() {
                                     <form class="login_form" onChange={onChange}>
                                         <input placeholder="User Name" id="username" />
                                         <input placeholder="Password" id="password" type="password" />     
-                                        {loginError && <div style={{ color: 'red' }}>{loginError}</div>}                                                 
+                                        {loginError && <div class="loginError">{loginError}</div>}                                                 
                                         <button onClick={performLogin}>Login</button>
                                     </form>
                                 </div>
