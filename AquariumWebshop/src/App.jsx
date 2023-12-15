@@ -10,6 +10,7 @@ import InvertebratesPage from './pages/InvertebratesPage';
 import SuppliesPage from './pages/SuppliesPage';
 import QuizPage from './pages/QuizPage';
 import HomePage from './pages/HomePage';
+import ErrorPage from './pages/ErrorPage';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="quiz" element={<QuizPage isAdmin={isAdmin} />} />
         <Route path="/" element={<HomePage />}>
         </Route>
+        <Route path="*" element={<ErrorPage />}/>
       </Route>
     )
   ) 
