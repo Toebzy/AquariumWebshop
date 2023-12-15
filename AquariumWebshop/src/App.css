@@ -317,3 +317,18 @@ h1{
 .circle.active {
   background-color: #333;
 }
+
+.footer{
+  display: flex;
+  justify-content: space-evenly; /* Adjust this based on your layout preferences */
+}
+
+.footer-background{
+  background-color: rgb(32, 32, 116);
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 20px;
+  margin-top: 50px;
+}

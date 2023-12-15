@@ -145,7 +145,6 @@ function MainLayout() {
                                 </div>
                             )}
                         </div>
-
                     </div>
                 </div>
                 <div class="under_header_background">
@@ -156,8 +155,32 @@ function MainLayout() {
                     </div>
                 </div>
             </header>
+
             <div>
                 <Outlet />
+            </div>
+
+            <div className="footer-background">
+                <div className="footer-container">
+                    <div className="footer">
+                        <div className="footer-column">
+                            <h3 className="footer-column-title">Kontakt</h3>
+                            <ul className="footer-column-list">
+                                <li className="footer-column-item">Telefon: 12 34 56 78</li>
+                                <li className="footer-column-item">Email: kontakt@aquaroma.dk</li>
+                                <li className="footer-column-item">Adresse: 40 Nørgaardsvej, 2800 Kongens Lyngby</li>
+                            </ul>
+                        </div>
+                        <div className="footer-column">
+                            <h3 className="footer-column-title">Om os</h3>
+                            <ul className="footer-column-list">
+                                <li className="footer-column-item">Om os</li>
+                                <li className="footer-column-item">Kontakt</li>
+                                <li className="footer-column-item">Handelsbetingelser</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
