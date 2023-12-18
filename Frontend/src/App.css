@@ -144,7 +144,7 @@ a{
   width: 200px;
   height: 200px;
   overflow: hidden;
-   border-radius: 10px;
+  border-radius: 10px;
 }
 
 .product-card img {
@@ -261,40 +261,33 @@ h1{
     opacity: 0; /* End with zero opacity */
   }
 }
+
 .cart-item::before {
   content: "";
   display: block;
-
 }
 .cart-item{
    fill: #6369a0 !important;
 }
-
-
-
 
 .slideshow-container {
   position: relative;
   max-width: 600px;
   margin: auto;
 }
-
 .slideshow-images {
   overflow: hidden;
   border-radius: 8px;
 }
-
 .slideshow-images img {
   width: 100%;
   height: auto;
   transition: transform 0.5s ease; /* Smooth transition */
   transform: translateX(-100%);
 }
-
 .slideshow-images img.active {
   transform: translateX(0);
 }
-
 .circle-navigation {
   position: absolute;
   bottom: 20px;
@@ -303,7 +296,6 @@ h1{
   display: flex;
   justify-content: center;
 }
-
 .circle {
   width: 10px;
   height: 10px;
@@ -313,7 +305,6 @@ h1{
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition */
 }
-
 .circle.active {
   background-color: #333;
 }
@@ -322,7 +313,6 @@ h1{
   display: flex;
   justify-content: space-evenly; /* Adjust this based on your layout preferences */
 }
-
 .footer-background{
   background-color: rgb(32, 32, 116);
   color: #fff;
@@ -331,6 +321,39 @@ h1{
   font-size: 16px;
   padding: 20px;
   margin-top: 50px;
+}
+.footer-column-clickable{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  fill:  #fff;
+  cursor: pointer;
+}
+.footer-column-clickable:hover{
+  color: rgb(156, 156, 240);
+  transform: scale(1.15);
+}
+.footer-column-icons{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  fill:  #fff;
+}
+.facebook-icon:hover{
+  fill: rgb(156, 156, 240);
+  transform: scale(1.15);
+  cursor: pointer;
+}
+.instagram-icon:hover{
+  fill: rgb(156, 156, 240);
+  transform: scale(1.15);
+  cursor: pointer;
+}
+.youtube-icon:hover{
+  fill: rgb(156, 156, 240);
+  transform: scale(1.15);
+  cursor: pointer;
 }
 
 .loginError{
