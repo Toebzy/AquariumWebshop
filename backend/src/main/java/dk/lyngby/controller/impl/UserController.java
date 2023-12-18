@@ -6,6 +6,7 @@ import dk.lyngby.config.HibernateConfig;
 import dk.lyngby.dao.impl.UserDao;
 import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
+import dk.lyngby.model.Cart;
 import dk.lyngby.model.User;
 import dk.lyngby.security.TokenFactory;
 import io.javalin.http.Context;

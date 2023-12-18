@@ -1,7 +1,10 @@
 package dk.lyngby.dao.impl;
 
 import dk.lyngby.dao.IDao;
+import dk.lyngby.dto.CartDTO;
+import dk.lyngby.dto.UserDTO;
 import dk.lyngby.exception.AuthorizationException;
+import dk.lyngby.model.Cart;
 import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
 import jakarta.persistence.EntityManager;
@@ -50,7 +53,11 @@ public class UserDao implements IDao<User, String> {
 
             user.addRole(role);
             em.persist(user);
+            Cart cart = new Cart(user);
+            CartDTO cartDTO = new CartDTO(cart);
+            em.persist(cart);
             em.getTransaction().commit();
+
             return user;
         } catch (Exception e) {
             throw new AuthorizationException(400, "Username already exists");

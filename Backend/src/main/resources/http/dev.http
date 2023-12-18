@@ -1,0 +1,19 @@
+GET {{url}}/products
+Authorization: Bearer {{token}}
+
+###
+POST {{url}}/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "productName": "Angelfish",
+  "productPrice": 7
+}
+###
+POST {{url}}/carts/2/products/1
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}/carts
+

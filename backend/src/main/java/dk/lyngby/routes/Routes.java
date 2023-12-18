@@ -19,6 +19,8 @@ public class Routes {
     private int count = 0;
 
     private final UserRoutes userRoutes = new UserRoutes();
+    private final ProductRoutes productRoutes = new ProductRoutes();
+    private final CartRoutes cartRoutes = new CartRoutes();
 
     private final Logger LOGGER = LoggerFactory.getLogger(Routes.class);
 
@@ -32,7 +34,9 @@ public class Routes {
             app.before(this::requestInfoHandler);
 
             app.routes(() -> {
+                path("/", productRoutes.getRoutes());
                 path("/", userRoutes.getRoutes());
+                path("/", cartRoutes.getRoutes());
             });
 
             app.after(ctx -> LOGGER.info(" Request {} - {} was handled with status code {}", count++, ctx.attribute("requestInfo"), ctx.status()));

@@ -1,5 +1,6 @@
 package dk.lyngby.dto;
 
+import dk.lyngby.model.Cart;
 import dk.lyngby.model.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,6 @@ public class UserDTO {
 
     private String username;
     private Set<String> roles;
-
     public UserDTO(String username, String[] roles) {
         this.username = username;
         this.roles = Set.of(roles);

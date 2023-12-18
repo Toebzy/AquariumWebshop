@@ -6,14 +6,9 @@ function MainLayout() {
     const init = { username: '', password: '' };
     const [loginCredentials, setLoginCredentials] = useState(init);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [dataFromServer, setDataFromServer] = useState('Loading...');
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [loginError, setLoginError] = useState(null);
 
-    useEffect(() => {
-      facade.fetchData('hotels', 'GET').then((data) => setDataFromServer(data));
-    }, [isLoggedIn]);
-  
     const performLogin = (evt) => {
         evt.preventDefault();
         facade.login(
