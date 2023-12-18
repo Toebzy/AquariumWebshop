@@ -11,6 +11,7 @@ import SuppliesPage from './pages/SuppliesPage';
 import QuizPage from './pages/QuizPage';
 import HomePage from './pages/HomePage';
 import ErrorPage from './pages/ErrorPage';
+import RegisterPage from './pages/RegisterPage';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="invertebrates" element={<InvertebratesPage isAdmin={isAdmin} />} />
         <Route path="supplies" element={<SuppliesPage isAdmin={isAdmin} />} />
         <Route path="quiz" element={<QuizPage isAdmin={isAdmin} />} />
+        <Route path="register" element={<RegisterPage isAdmin={isAdmin} />} />
         <Route path="/" element={<HomePage />}>
         </Route>
         <Route path="*" element={<ErrorPage />}/>
