@@ -174,9 +174,9 @@ function MainLayout() {
                         <div className="footer-column">
                             <h3 className="footer-column-title">About us</h3>
                             <ul className="footer-column-list">
-                                <li className="footer-column-item">History</li>
-                                <li className="footer-column-item">Legal notice</li>
-                                <li className="footer-column-item">Guide</li>
+                                <NavLink to="/"><li className="footer-column-clickable">History</li></NavLink>
+                                <NavLink to="/"><li className="footer-column-clickable">Legal notice</li></NavLink>
+                                <NavLink to="/"><li className="footer-column-clickable">Guide</li></NavLink>
                             </ul>
                         </div>
                         <div className="footer-column-icons">
