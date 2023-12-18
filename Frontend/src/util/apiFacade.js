@@ -1,7 +1,8 @@
 
 const URL = 'http://localhost:7070/api/v1/'
-const HOTEL_ROUTE = "hotels"
+const USER_ROUTE = "user"
 const AUTHENTICATION_ROUTE = 'auth/login'
+const REGISTER_ROUTE = 'auth/register'
 
 function apiFacade()
 {
@@ -35,7 +36,7 @@ function apiFacade()
     const login = (user, password, onSuccess, onError) => {
         console.log("Jeg er fanget inde i login funktionen", user, password);
       
-        const payload = { username: user, password: password };
+        const payload = { username: user, password: password};
       
         const options = makeOptions("POST", payload);
       
@@ -56,6 +57,28 @@ function apiFacade()
             throw error; // Propagate the error to indicate a failed login
           });
       };
+
+      const register = (user, password, onSuccess, onError) => {
+        const payload = { username: user, password: password, roles: ["user"]};
+        const options = makeOptions("POST", payload);
+    
+        return fetch(URL + REGISTER_ROUTE, options)
+            .then(handleHttpErrors)
+            .then((json) => {
+                onSuccess(true);
+                setToken(json.token);
+            })
+            .catch((error) => {
+                if (error.status) {
+                    error.fullError.then((e) => console.log(JSON.stringify(e)));
+                    onError(false);
+                } else {
+                    console.log("serious error", error);
+                    onError(false);
+                }
+                throw error;
+            });
+    };
 
     const fetchData = (endpoint, method, payload) =>
     {
@@ -111,6 +134,7 @@ function apiFacade()
         getToken,
         logout,
         login,
+        register,
         getUserRoles,
         hasUserAccess,
         fetchData
