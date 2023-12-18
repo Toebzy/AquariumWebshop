@@ -1,6 +1,6 @@
 
 const URL = 'http://localhost:7070/api/v1/'
-const HOTEL_ROUTE = "hotels"
+const USER_ROUTE = "users"
 const AUTHENTICATION_ROUTE = 'auth/login'
 
 function apiFacade()

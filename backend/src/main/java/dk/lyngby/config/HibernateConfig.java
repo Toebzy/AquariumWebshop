@@ -1,8 +1,6 @@
 package dk.lyngby.config;
 
-import dk.lyngby.model.Hotel;
 import dk.lyngby.model.Role;
-import dk.lyngby.model.Room;
 import dk.lyngby.model.User;
 import jakarta.persistence.EntityManagerFactory;
 import lombok.NoArgsConstructor;
@@ -69,7 +67,7 @@ public class HibernateConfig {
             Properties props = new Properties();
             props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
             props.put("hibernate.connection.driver_class", "org.testcontainers.jdbc.ContainerDatabaseDriver");
-            props.put("hibernate.connection.url", "jdbc:tc:postgresql:15.3-alpine3.18:///test_db");
+            props.put("hibernate.connection.url", "jdbc:tc:postgresql:15.3-alpine3.18:///fish_db");
             props.put("hibernate.connection.username", "postgres");
             props.put("hibernate.connection.password", "postgres");
             props.put("hibernate.archive.autodetection", "class");
@@ -97,8 +95,6 @@ public class HibernateConfig {
 
 
     private static void getAnnotationConfiguration(Configuration configuration) {
-        configuration.addAnnotatedClass(Hotel.class);
-        configuration.addAnnotatedClass(Room.class);
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Role.class);
     }
