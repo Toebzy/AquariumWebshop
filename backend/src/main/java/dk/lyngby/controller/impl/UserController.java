@@ -25,7 +25,7 @@ public class UserController {
 
     public void login(Context ctx) throws ApiException, AuthorizationException {
         String[] userInfos = getUserInfos(ctx, true);
-        User user = getVerfiedOrRegisterUser(userInfos[0], userInfos[1], "", false);
+        User user = getVerifiedOrRegisterUser(userInfos[0], userInfos[1], "", false);
         String token = getToken(userInfos[0], user.getRolesAsStrings());
 
         // Create response
@@ -35,7 +35,7 @@ public class UserController {
 
     public void register(Context ctx) throws ApiException, AuthorizationException {
         String[] userInfos = getUserInfos(ctx, false);
-        User user = getVerfiedOrRegisterUser(userInfos[0], userInfos[1], userInfos[2], true);
+        User user = getVerifiedOrRegisterUser(userInfos[0], userInfos[1], userInfos[2], true);
         String token = getToken(userInfos[0], user.getRolesAsStrings());
 
         // Create response
@@ -56,7 +56,7 @@ public class UserController {
         return tokenFactory.parseJsonObject(request, tryLogin);
     }
 
-    private User getVerfiedOrRegisterUser(String username, String password, String role, boolean isCreate) throws AuthorizationException {
+    private User getVerifiedOrRegisterUser(String username, String password, String role, boolean isCreate) throws AuthorizationException {
         return isCreate ? userDao.registerUser(username, password, role) : userDao.getVerifiedUser(username, password);
     }
 
