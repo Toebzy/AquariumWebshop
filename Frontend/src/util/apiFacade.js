@@ -59,7 +59,7 @@ function apiFacade()
       };
 
       const register = (user, password, onSuccess, onError) => {
-        const payload = { username: user, password: password, roles: ["user"]};
+        const payload = { username: user, password: password, role: "user"};
         const options = makeOptions("POST", payload);
     
         return fetch(URL + REGISTER_ROUTE, options)
