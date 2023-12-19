@@ -4,7 +4,7 @@ function InvertebratesPage(props) {
     const { onProductAdd} = props;
     return (
         <div className="content">
-        <h1>Invertebrates page</h1>
+        <h1> Incredible Invertebrates</h1>
         <p>no skellyton havers</p>
         <Product onProductAdd={onProductAdd} productName="Angelfish" 
         productText="(Pterophyllum scalare)" 

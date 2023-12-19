@@ -5,8 +5,8 @@ function SuppliesPage(props,{isAdmin}) {
     const { onProductAdd} = props;
     return (
         <div className="content">
-        <h1>Supplies page</h1>
-        <p>SuppliesPage</p>
+        <h1>Sufficient  Supplies</h1>
+        <p>All the necessities</p>
         <Product onProductAdd={onProductAdd} productName="TetraMin Tropical Flakes" 
         productText="28G" 
         productPrice="$12" 

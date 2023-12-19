@@ -1,11 +1,11 @@
 import Product from "../components/Product";
 
-function AquariumsPage(props,{isAdmin}) {
+function TanksPage(props,{isAdmin}) {
     const { onProductAdd} = props;
     return (
         <div className="content">
-        <h1>Aquariums page</h1>
-        <p>AquariumsPage</p>
+        <h1>Tranquil Tanks</h1>
+        <p>Let the fishies feel at home</p>
 
         <Product onProductAdd={onProductAdd} productName="Fish Box Moon" 
         productText="19L" 
@@ -43,4 +43,4 @@ function AquariumsPage(props,{isAdmin}) {
     );
 }
 
-export default AquariumsPage;
+export default TanksPage;

@@ -4,7 +4,6 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, N
 import MainLayout from './components/Navbar';
 import UserPage from './pages/UserPage';
 import AdminPage from './pages/AdminPage';
-import AquariumsPage from './pages/AquariumsPage';
 import FishPage from './pages/FishPage';
 import InvertebratesPage from './pages/InvertebratesPage';
 import SuppliesPage from './pages/SuppliesPage';
@@ -12,6 +11,7 @@ import QuizPage from './pages/QuizPage';
 import HomePage from './pages/HomePage';
 import ErrorPage from './pages/ErrorPage';
 import RegisterPage from './pages/RegisterPage';
+import TanksPage from './pages/TanksPage';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
       <Route path="/" element={<MainLayout />}>
         <Route path="user" element={<UserPage isAdmin={isAdmin} />} />
         <Route path="admin" element={<AdminPage isAdmin={isAdmin} />} />
-        <Route path="aquariums" element={<AquariumsPage isAdmin={isAdmin} />} />
+        <Route path="tanks" element={<TanksPage isAdmin={isAdmin} />} />
         <Route path="fish" element={<FishPage isAdmin={isAdmin} />} />
         <Route path="invertebrates" element={<InvertebratesPage isAdmin={isAdmin} />} />
         <Route path="supplies" element={<SuppliesPage isAdmin={isAdmin} />} />

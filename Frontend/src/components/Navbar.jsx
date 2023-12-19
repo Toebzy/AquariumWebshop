@@ -92,7 +92,7 @@ function MainLayout() {
                                         <NavLink to="fish"><li className="nav-item">Fish</li></NavLink>
                                         <NavLink to="invertebrates"><li className="nav-item">Invertebrates</li></NavLink>
                                         <NavLink to="supplies"><li className="nav-item">Supplies</li></NavLink>
-                                        <NavLink to="aquariums"><li className="nav-item">Tanks</li></NavLink>
+                                        <NavLink to="tanks"><li className="nav-item">Tanks</li></NavLink>
                                         <NavLink to="quiz"><li className="nav-item">Quiz</li></NavLink>
                                     </ul>
                                 </nav>

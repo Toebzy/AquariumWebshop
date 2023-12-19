@@ -1,8 +1,8 @@
 function QuizPage({isAdmin}) {
     return (
         <div className="content">
-        <h1>Quiz page</h1>
-        <p>QuizPage</p>
+        <h1>Quick-witted Quiz</h1>
+        <p>Find the fish most suited for you!</p>
         </div>
     );
 }

@@ -221,8 +221,26 @@ a{
   margin: 9px;
 }
 .login_form button{
-  display: inline-block !important;
-  margin: 0 5px !important;
+  display: inline-block;
+  margin: 0 5px;
+}
+.register-form{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin: 5px;
+  align-items: center;
+  justify-content: center; 
+}
+.register-form button{
+  font-family: 'Josefin Sans', sans-serif;
+  border-radius: 8px;
+  border-color: rgb(32, 32, 116);
+  background-color: rgb(32, 32, 116);
+  color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.10);
+  font-weight: 400;
+  border-style: solid;
 }
 h1{
   text-align: center;

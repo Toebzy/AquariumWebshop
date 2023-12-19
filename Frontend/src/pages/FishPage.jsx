@@ -4,7 +4,7 @@ function FishPage(props,{isAdmin}) {
     const { onProductAdd} = props;
     return (
         <div className="content">
-        <h1>Fish page</h1>
+        <h1>Fancy Fish</h1>
         <p>blub blub</p>
         <Product onProductAdd={onProductAdd} productName="Angelfish" 
         productText="(Pterophyllum scalare)" 
