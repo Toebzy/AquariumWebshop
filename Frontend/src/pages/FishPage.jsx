@@ -10,7 +10,7 @@ function FishPage({ onProductAdd }) {
     { id: 2, name: 'Clownfish', text: '(Amphiprioninae)', price: '$15', image: 'src/assets/images/clownfish.jpg' },
     { id: 3, name: 'Royal Gramma', text: '(Gramma loreto)', price: '$25', image: 'https://freakincorals.com/cdn/shop/products/lg_72329_Royal_Gramma_Basslet_576x.jpg?v=1601919573' },
     { id: 4, name: 'Blue Tang', text: '(Paracanthurus hepatus)', price: '$30', image: 'src/assets/images/bluetang.jpeg' },
-    { id: 5, name: 'Garryfish', text: '(Garryfish)', price: '$4', image: 'src/assets/images/garryfish.png' },
+    { id: 5, name: 'Garryfish', text: '(Garryfish)', price: '$4', image: 'src/assets/images/garryfish.jpg' },
   ];
 
   
