@@ -7,9 +7,20 @@ function SuppliesPage(props,{isAdmin}) {
         <div className="content">
         <h1>Supplies page</h1>
         <p>SuppliesPage</p>
-        <Product onProductAdd={onProductAdd} productName="Angelfish" productText="(Pterophyllum scalare)" productPrice="$7" productImage='src/assets/images/angelfish.png'/>
-        <Product onProductAdd={onProductAdd} productName="Angelfish" productText="(Pterophyllum scalare)" productPrice="$7" productImage='src/assets/images/angelfish.png'/>
-        <Product onProductAdd={onProductAdd} productName="Angelfish" productText="(Pterophyllum scalare)" productPrice="$7" productImage='src/assets/images/angelfish.png'/>
+        <Product onProductAdd={onProductAdd} productName="TetraMin Tropical Flakes" 
+        productText="28G" 
+        productPrice="$12" 
+        productImage='src/assets/images/tetra-tropical-flakes.jpg'/>
+
+        <Product onProductAdd={onProductAdd} productName="Tetra Cichlid Sticks" 
+        productText="30G" 
+        productPrice="$14" 
+        productImage='src/assets/images/tetra-cichlid.jpg'/>
+
+        <Product onProductAdd={onProductAdd} productName="Tetra Pro Colour" 
+        productText="30G" 
+        productPrice="$16" 
+        productImage='src/assets/images/tetra-pro.jpg'/>
         </div>
     );
 }
