@@ -17,7 +17,7 @@ public class CartRoutes {
         return () -> {
             path("/carts", () -> {
                 post("/", cartController::create, RouteRoles.ADMIN, RouteRoles.MANAGER);
-                post("/{id}/products/{productId}", cartController::addProductToCart, RouteRoles.ADMIN, RouteRoles.MANAGER);
+                post("/{id}/products/{productId}", cartController::addProductToCart, RouteRoles.USER, RouteRoles.ADMIN, RouteRoles.MANAGER);
                 get("/", cartController::readAll, RouteRoles.ANYONE);
                 get("/{id}", cartController::read, RouteRoles.USER, RouteRoles.ADMIN, RouteRoles.MANAGER);
                 put("/{id}", cartController::update, RouteRoles.ADMIN, RouteRoles.MANAGER);

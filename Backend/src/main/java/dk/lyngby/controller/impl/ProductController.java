@@ -40,6 +40,15 @@ public class ProductController implements IController<Product, Integer> {
         ctx.res().setStatus(200);
         ctx.json(productDTOS, ProductDTO.class);
     }
+    public void readAllFish(Context ctx) {
+        // entity
+        List<Product> fishProducts = dao.readAllByCategory("Fish");
+        // dto
+        List<ProductDTO> fishProductDTOs = ProductDTO.toProductDTOList(fishProducts);
+        // response
+        ctx.res().setStatus(200);
+        ctx.json(fishProductDTOs, ProductDTO.class);
+    }
 
     @Override
     public void create(Context ctx) {

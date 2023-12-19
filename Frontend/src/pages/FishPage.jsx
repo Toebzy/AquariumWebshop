@@ -1,19 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
 
 function FishPage({ onProductAdd }) {
   const { searchQuery } = useContext(SearchContext);
 
-  // Sample fish data (replace this with your actual data)
   const fishData = [
-    { name: 'Angelfish', text: '(Pterophyllum scalare)', price: '$7', image: 'src/assets/images/angelfish.jpg' },
-    { name: 'Clownfish', text: '(Amphiprioninae)', price: '$15', image: 'src/assets/images/clownfish.jpg' },
-    { name: 'Royal Gramma', text: '(Gramma loreto)', price: '$25', image: 'src/assets/images/gramma.jpg' },
-    { name: 'Blue Tang', text: '(Paracanthurus hepatus)', price: '$30', image: 'src/assets/images/bluetang.jpeg' },
-    { name: 'Garryfish', text: '(Garryfish)', price: '$4', image: 'src/assets/images/garryfish.png' },
+    { id: 1, name: 'Angelfish', text: '(Pterophyllum scalare)', price: '$7', image: 'src/assets/images/angelfish.jpg' },
+    { id: 2, name: 'Clownfish', text: '(Amphiprioninae)', price: '$15', image: 'src/assets/images/clownfish.jpg' },
+    { id: 3, name: 'Royal Gramma', text: '(Gramma loreto)', price: '$25', image: 'https://freakincorals.com/cdn/shop/products/lg_72329_Royal_Gramma_Basslet_576x.jpg?v=1601919573' },
+    { id: 4, name: 'Blue Tang', text: '(Paracanthurus hepatus)', price: '$30', image: 'src/assets/images/bluetang.jpeg' },
+    { id: 5, name: 'Garryfish', text: '(Garryfish)', price: '$4', image: 'src/assets/images/garryfish.png' },
   ];
 
+  
   // Filter the fish data based on the searchQuery
   const filteredFishData = fishData.filter(fish =>
     fish.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -23,10 +23,9 @@ function FishPage({ onProductAdd }) {
     <div className="content">
       <h1>Fancy Fish</h1>
       <p>blub blub</p>
-
       {filteredFishData.map(fish => (
         <Product
-          key={fish.name}
+          productId={fish.id}
           onProductAdd={onProductAdd}
           productName={fish.name}
           productText={fish.text}
@@ -35,7 +34,7 @@ function FishPage({ onProductAdd }) {
         />
       ))}
 
-      {filteredFishData.length === 0 && (
+{filteredFishData.length === 0 && (
         <h1>No fish found for '{searchQuery}'</h1>
       )}
     </div>

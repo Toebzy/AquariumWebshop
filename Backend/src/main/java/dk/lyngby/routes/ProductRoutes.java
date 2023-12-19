@@ -17,6 +17,7 @@ public class ProductRoutes {
             path("/products", () -> {
                 post("/", productController::create, RouteRoles.ADMIN, RouteRoles.MANAGER);
                 get("/", productController::readAll, RouteRoles.ANYONE);
+                get("/fish", productController::readAllFish, RouteRoles.ANYONE);
                 get("/{id}", productController::read, RouteRoles.USER, RouteRoles.ADMIN, RouteRoles.MANAGER);
                 put("/{id}", productController::update, RouteRoles.ADMIN, RouteRoles.MANAGER);
                 delete("/{id}", productController::delete, RouteRoles.ADMIN, RouteRoles.MANAGER);

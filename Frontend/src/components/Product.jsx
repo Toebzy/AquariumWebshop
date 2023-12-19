@@ -1,18 +1,24 @@
 import { useState } from "react";
+import facade from '../util/apiFacade';
 
 function Product(props) {
-  const { productName, onProductAdd, productText, productPrice, productImage } = props;
+  const { productId, productName, onProductAdd, productText, productPrice, productImage } = props;
   const [isSentToCart, setIsSentToCart] = useState(false);
 
   const handleClick = () => {
     setIsSentToCart(true);
     setTimeout(() => {
       setIsSentToCart(false);
-      onProductAdd();
+      toCart();
     }, 800);
   };
 
   const cartClassName = isSentToCart ? "send-to-cart" : "";
+
+  const toCart= () =>{
+    facade.addToCart(productId);
+    console.log(productId);
+  }
 
   return (
 

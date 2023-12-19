@@ -13,12 +13,17 @@ public class ProductDTO {
     private Integer id;
     private String productName;
     private Integer productPrice;
+    private String productCategory;
+    private String productText;
+    private String productImage;
 
     public ProductDTO(Product product){
         this.id=product.getProductId();
         this.productName=product.getProductName();
         this.productPrice=product.getProductPrice();
-
+        this.productCategory=product.getProductCategory();
+        this.productText=product.getProductText();
+        this.productImage=product.getProductImage();
     }
     public static List<ProductDTO> toProductDTOList(List<Product> products) {
         return products.stream().map(ProductDTO::new).collect(Collectors.toList());

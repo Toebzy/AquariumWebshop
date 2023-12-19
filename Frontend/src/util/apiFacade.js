@@ -153,10 +153,29 @@ function apiFacade()
         return loggedIn && roles.includes(neededRole)
     }
     const getCart = (onSuccess, onError) => {
-        console.log(getCartId()+"test")
         return fetchData( `carts/${getCartId()}`, "GET")
             .then((cart) => {
                 onSuccess(cart);
+            })
+            .catch((error) => {
+                console.error("Error fetching cart:", error);
+                onError(error);
+            });
+    };
+    const addToCart = (id) => {
+        return fetchData( `carts/${getCartId()}/products/`+id, "POST")
+            .then((fish) => {
+                (fish);
+            })
+            .catch((error) => {
+                console.error("Error fetching cart:", error);
+            });
+    };
+
+    const getFish = (onSuccess, onError) => {
+        return fetchData( `products/fish`, "GET")
+            .then((fish) => {
+                onSuccess(fish);
             })
             .catch((error) => {
                 console.error("Error fetching cart:", error);
@@ -176,7 +195,9 @@ function apiFacade()
         getUserRoles,
         hasUserAccess,
         fetchData,
-        getCart
+        getCart,
+        getFish,
+        addToCart
     }
 
 }

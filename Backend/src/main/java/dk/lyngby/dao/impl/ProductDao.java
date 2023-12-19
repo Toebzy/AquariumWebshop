@@ -3,8 +3,10 @@ package dk.lyngby.dao.impl;
 import dk.lyngby.dao.IDao;
 import dk.lyngby.model.Cart;
 import dk.lyngby.model.Product;
+import dk.lyngby.model.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
@@ -58,6 +60,16 @@ public class ProductDao implements IDao <Product, Integer> {
             Product merge = em.merge(h);
             em.getTransaction().commit();
             return merge;
+        }
+    }
+
+
+    public List<Product> readAllByCategory(String category) {
+        try(EntityManager em = emf.createEntityManager())
+        {
+            TypedQuery<Product> q1 = em.createQuery("SELECT p FROM Product p WHERE LOWER(p.productCategory) = LOWER(:category)", Product.class);
+            q1.setParameter("category", category.toLowerCase());
+            return q1.getResultList();
         }
     }
 
