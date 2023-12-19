@@ -15,7 +15,7 @@ function AquariumsPage(props,{isAdmin}) {
         <Product
         onProductAdd={onProductAdd}
         productName="Aquatropic LED 60"
-        productText="A60L"
+        productText="60L"
         productPrice="$145"
         productImage='src/assets/images/tank60l.jpg'/>
 
