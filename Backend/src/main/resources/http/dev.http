@@ -11,10 +11,10 @@ Authorization: Bearer {{token}}
   "productPrice": 7
 }
 ###
-POST {{url}}/carts/1/products/1
+POST {{url}}/carts/2/products/1
 Authorization: Bearer {{token}}
 
 ###
-GET {{url}}/carts/
+GET {{url}}/carts/2
 Authorization: Bearer {{token}}
 

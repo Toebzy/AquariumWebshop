@@ -66,3 +66,10 @@ Content-Type: application/json
 > {% client.global.set("token", response.body.token); %}
 
 ###
+### get cart id
+GET {{url}}/auth/cartid/user
+Content-Type: application/json
+
+> {% client.global.set("token", response.body.token); %}
+
+###

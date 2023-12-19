@@ -17,9 +17,20 @@ function apiFacade()
         return localStorage.getItem('jwtToken')
     }
 
+    const setCartId = (cartid) =>
+    {
+        localStorage.setItem('cartId', cartid)
+    }
+
+    const getCartId = () =>
+    {
+        return localStorage.getItem('cartId')
+    }
+
     const logout = (callback) =>
     {
         localStorage.removeItem('jwtToken')
+        localStorage.removeItem('cartId')
         callback(false)
     }
 
@@ -34,7 +45,7 @@ function apiFacade()
     }
 
     const login = (user, password, onSuccess, onError) => {
-        console.log("Jeg er fanget inde i login funktionen", user, password);
+       // console.log("Jeg er fanget inde i login funktionen", user, password);
       
         const payload = { username: user, password: password};
       
@@ -45,6 +56,7 @@ function apiFacade()
           .then((json) => {
             onSuccess(true);
             setToken(json.token);
+            readCartId(user);
           })
           .catch((error) => {
             if (error.status) {
@@ -56,7 +68,20 @@ function apiFacade()
             }
             throw error; // Propagate the error to indicate a failed login
           });
+          
       };
+      const readCartId = (user) => {
+         return fetchData( "auth/cartid/"+user, "GET")
+         .then((cartId) => {
+             setCartId(cartId);
+             console.log(getCartId()+"test 2")
+         })
+         .catch((error) => {
+             console.error("Error fetching cart:", error);
+             onError(error);
+         });
+       };
+ 
 
       const register = (user, password, onSuccess, onError) => {
         const payload = { username: user, password: password, role: "user"};
@@ -128,7 +153,8 @@ function apiFacade()
         return loggedIn && roles.includes(neededRole)
     }
     const getCart = (onSuccess, onError) => {
-        return fetchData( "carts/"+USER_ROUTE, "GET")
+        console.log(getCartId()+"test")
+        return fetchData( `carts/${getCartId()}`, "GET")
             .then((cart) => {
                 onSuccess(cart);
             })
@@ -142,6 +168,8 @@ function apiFacade()
         makeOptions,
         setToken,
         getToken,
+        setCartId,
+        getCartId,
         logout,
         login,
         register,

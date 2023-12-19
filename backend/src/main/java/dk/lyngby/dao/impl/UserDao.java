@@ -7,6 +7,7 @@ import dk.lyngby.exception.AuthorizationException;
 import dk.lyngby.model.Cart;
 import dk.lyngby.model.Role;
 import dk.lyngby.model.User;
+import io.javalin.http.Context;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -83,6 +84,14 @@ public class UserDao implements IDao<User, String> {
             User user = em.find(User.class, userName);
             em.getTransaction().commit();
             return user;
+        }
+    }
+    public Integer readCartId(String userName) {
+        try (var em = emf.createEntityManager()) {
+            em.getTransaction().begin();
+            User user = em.find(User.class, userName);
+            em.getTransaction().commit();
+            return user.getCart().getId();
         }
     }
 

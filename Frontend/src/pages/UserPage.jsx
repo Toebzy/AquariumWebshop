@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react';
 import facade from '../util/apiFacade';
 import { SearchContext } from "../components/SearchProvider";
-function UserPage({isAdmin}) {
+
+function UserPage({ isAdmin }) {
     const { searchQuery } = useContext(SearchContext);
     const [cart, setCart] = useState(null);
 
@@ -28,7 +29,22 @@ function UserPage({isAdmin}) {
             {cart && (
                 <div>
                     <h2>Your Cart:</h2>
-                    {/* Render cart details here */}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Product Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {cart.cart_items.map((item) => (
+                                <tr key={item.id}>
+                                    <td>{item.productName}</td>
+                                    <td>{item.productPrice}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             )}
         </div>

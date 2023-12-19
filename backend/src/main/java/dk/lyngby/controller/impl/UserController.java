@@ -4,9 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import dk.lyngby.config.HibernateConfig;
 import dk.lyngby.dao.impl.UserDao;
+import dk.lyngby.dto.CartDTO;
+import dk.lyngby.dto.ProductDTO;
 import dk.lyngby.exception.ApiException;
 import dk.lyngby.exception.AuthorizationException;
 import dk.lyngby.model.Cart;
+import dk.lyngby.model.Product;
 import dk.lyngby.model.User;
 import dk.lyngby.security.TokenFactory;
 import io.javalin.http.Context;
@@ -63,5 +66,14 @@ public class UserController {
 
     private String getToken(String username, Set<String> userRoles) throws ApiException {
         return tokenFactory.createToken(username, userRoles);
+    }
+    public void findCartId(Context ctx) {
+        // request
+        String username = ctx.pathParamAsClass("username", String.class).get();
+        // entity
+        Integer i = userDao.readCartId(username);
+        // response
+        ctx.res().setStatus(200);
+        ctx.json(i);
     }
 }
