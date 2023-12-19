@@ -3,7 +3,7 @@ import Product from "../components/Product";
 function FishPage(props,{isAdmin}) {
     const { onProductAdd} = props;
     return (
-        <div class="content">
+        <div className="content">
         <h1>Fish page</h1>
         <p>blub blub</p>
         <Product onProductAdd={onProductAdd} productName="Angelfish" 

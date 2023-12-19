@@ -3,42 +3,42 @@ import Product from "../components/Product";
 function AquariumsPage(props,{isAdmin}) {
     const { onProductAdd} = props;
     return (
-        <div class="content">
+        <div className="content">
         <h1>Aquariums page</h1>
         <p>AquariumsPage</p>
 
-        <Product onProductAdd={onProductAdd} productName="Angelfish" 
-        productText="(Pterophyllum scalare)" 
-        productPrice="$7" 
-        productImage='src/assets/images/angelfish.jpg'/>
+        <Product onProductAdd={onProductAdd} productName="Fish Box Moon" 
+        productText="19L" 
+        productPrice="$75" 
+        productImage='src/assets/images/tank19l.jpg'/>
 
         <Product
         onProductAdd={onProductAdd}
-        productName="Clownfish"
-        productText="Amphiprioninae"
-        productPrice="$15"
-        productImage='src/assets/images/clownfish.jpg'/>
+        productName="Aquatropic LED 60"
+        productText="A60L"
+        productPrice="$145"
+        productImage='src/assets/images/tank60l.jpg'/>
 
         <Product
         onProductAdd={onProductAdd}
-        productName="Royal Gramma"
-        productText="Gramma loreto"
-        productPrice="$25"
-        productImage="src/assets/images/gramma.jpg"/>
+        productName="Superfish Tropical Medium"
+        productText="62L"
+        productPrice="$109.99"
+        productImage="src/assets/images/tank62l.jpg"/>
 
         <Product
         onProductAdd={onProductAdd}
-        productName="Blue Tang"
-        productText="Paracanthurus hepatus"
-        productPrice="$30"
-        productImage="src/assets/images/bluetang.jpeg"/>
+        productName="Fishotronic L 160"
+        productText="160L"
+        productPrice="$199.99"
+        productImage="src/assets/images/tank160l.jpg"/>
 
         <Product
         onProductAdd={onProductAdd}
-        productName="Garryfish"
-        productText="Garryfish"
-        productPrice="$4"
-        productImage="src/assets/images/garryfish.png"/>
+        productName="Tetra XL Aquarium"
+        productText="200L"
+        productPrice="$215"
+        productImage="src/assets/images/tank200l.jpg"/>
         </div>
     );
 }

@@ -3,7 +3,7 @@ import Product from "../components/Product";
 function InvertebratesPage(props) {
     const { onProductAdd} = props;
     return (
-        <div class="content">
+        <div className="content">
         <h1>Invertebrates page</h1>
         <p>no skellyton havers</p>
         <Product onProductAdd={onProductAdd} productName="Angelfish" 

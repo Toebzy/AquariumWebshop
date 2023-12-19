@@ -3,14 +3,14 @@ import Slideshow from "../components/Slideshow";
 function HomePage(){
     return (
         <div>
-            <section class="content">
-                <div class="container">
+            <section className="content">
+                <div className="container">
                                 
             <div className="slideshow">
                 <Slideshow />
             </div>
 
-                    <div class="row">
+                    <div className="row">
                         <h1>MMMMMMMMMMMMMMMMMMMMMMMMHHHHHH..... FISK</h1>
                         <img src="\src\assets\images\fish.jpg" alt="fish" />
                     </div>

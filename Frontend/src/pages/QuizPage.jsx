@@ -1,6 +1,6 @@
 function QuizPage({isAdmin}) {
     return (
-        <div class="content">
+        <div className="content">
         <h1>Quiz page</h1>
         <p>QuizPage</p>
         </div>
