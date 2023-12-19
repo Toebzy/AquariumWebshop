@@ -133,11 +133,13 @@ function MainLayout() {
                                     <form className="login_form" onChange={onChange}>
                                         <input placeholder="User Name" id="username" />
                                         <input placeholder="Password" id="password" type="password" />     
-                                        {loginError && <div className="loginError">{loginError}</div>}                                                 
+                                        {loginError && <div className="loginError">{loginError}</div>} 
+                                        <div>                                             
                                         <button onClick={performLogin}>Login</button>
                                         <NavLink to="/register">
                                         <button onClick={toggleLoginModal}>Sign up</button>
                                         </NavLink>
+                                        </div>    
                                     </form>
                                 </div>
                             )}

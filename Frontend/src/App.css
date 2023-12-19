@@ -220,6 +220,10 @@ a{
 .login_form input{
   margin: 9px;
 }
+.login_form button{
+  display: inline-block !important;
+  margin: 0 5px !important;
+}
 h1{
   text-align: center;
   font-size: 35px;
