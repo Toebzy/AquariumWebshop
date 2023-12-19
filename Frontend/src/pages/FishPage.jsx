@@ -14,28 +14,28 @@ function FishPage(props,{isAdmin}) {
         <Product
         onProductAdd={onProductAdd}
         productName="Clownfish"
-        productText="Amphiprioninae"
+        productText="(Amphiprioninae)"
         productPrice="$15"
         productImage='src/assets/images/clownfish.jpg'/>
 
         <Product
         onProductAdd={onProductAdd}
         productName="Royal Gramma"
-        productText="Gramma loreto"
+        productText="(Gramma loreto)"
         productPrice="$25"
         productImage="src/assets/images/gramma.jpg"/>
 
         <Product
         onProductAdd={onProductAdd}
         productName="Blue Tang"
-        productText="Paracanthurus hepatus"
+        productText="(Paracanthurus hepatus)"
         productPrice="$30"
         productImage="src/assets/images/bluetang.jpeg"/>
 
         <Product
         onProductAdd={onProductAdd}
         productName="Garryfish"
-        productText="Garryfish"
+        productText="(Garryfish)"
         productPrice="$4"
         productImage="src/assets/images/garryfish.png"/>
         </div>
