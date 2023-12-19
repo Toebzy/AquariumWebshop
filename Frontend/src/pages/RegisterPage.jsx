@@ -1,8 +1,11 @@
 import { NavLink, Outlet } from "react-router-dom"
 import { useState } from 'react';
 import facade from '../util/apiFacade';
+import React, { useContext } from 'react';
+import { SearchContext } from "../components/SearchProvider";
 
   const RegisterPage = () => {
+    const { searchQuery } = useContext(SearchContext);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
   

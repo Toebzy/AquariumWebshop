@@ -1,28 +1,44 @@
+import React, { useContext } from 'react';
+import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
 
-function SuppliesPage(props,{isAdmin}) {
-    
-    const { onProductAdd} = props;
-    return (
-        <div className="content">
-        <h1>Sufficient  Supplies</h1>
-        <p>All the necessities</p>
-        <Product onProductAdd={onProductAdd} productName="TetraMin Tropical Flakes" 
-        productText="28G" 
-        productPrice="$12" 
-        productImage='src/assets/images/tetra-tropical-flakes.jpg'/>
+function SuppliesPage({ onProductAdd }) {
+  const { searchQuery } = useContext(SearchContext);
 
-        <Product onProductAdd={onProductAdd} productName="Tetra Cichlid Sticks" 
-        productText="30G" 
-        productPrice="$14" 
-        productImage='src/assets/images/tetra-cichlid.jpg'/>
+  // Sample supplies data (replace this with your actual data)
+  const suppliesData = [
+    { name: 'TetraMin Tropical Flakes', text: '28G', price: '$12', image: 'src/assets/images/tetra-tropical-flakes.jpg' },
+    { name: 'Tetra Cichlid Sticks', text: '30G', price: '$14', image: 'src/assets/images/tetra-cichlid.jpg' },
+    { name: 'Tetra Pro Colour', text: '30G', price: '$16', image: 'src/assets/images/tetra-pro.jpg' },
+    // Add more supplies data as needed
+  ];
 
-        <Product onProductAdd={onProductAdd} productName="Tetra Pro Colour" 
-        productText="30G" 
-        productPrice="$16" 
-        productImage='src/assets/images/tetra-pro.jpg'/>
-        </div>
-    );
+  // Filter the supplies data based on the searchQuery
+  const filteredSuppliesData = suppliesData.filter(supply =>
+    supply.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    <div className="content">
+      <h1>Sufficient Supplies</h1>
+      <p>All the necessities</p>
+
+      {filteredSuppliesData.map(supply => (
+        <Product
+          key={supply.name}
+          onProductAdd={onProductAdd}
+          productName={supply.name}
+          productText={supply.text}
+          productPrice={supply.price}
+          productImage={supply.image}
+        />
+      ))}
+
+      {filteredSuppliesData.length === 0 && (
+        <h1>No supplies found for '{searchQuery}'</h1>
+      )}
+    </div>
+  );
 }
 
 export default SuppliesPage;

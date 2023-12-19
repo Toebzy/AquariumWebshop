@@ -1,45 +1,45 @@
+import React, { useContext } from 'react';
+import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
 
-function FishPage(props,{isAdmin}) {
-    const { onProductAdd} = props;
-    return (
-        <div className="content">
-        <h1>Fancy Fish</h1>
-        <p>blub blub</p>
-        <Product onProductAdd={onProductAdd} productName="Angelfish" 
-        productText="(Pterophyllum scalare)" 
-        productPrice="$7" 
-        productImage='src/assets/images/angelfish.jpg'/>
+function FishPage({ onProductAdd }) {
+  const { searchQuery } = useContext(SearchContext);
 
-        <Product
-        onProductAdd={onProductAdd}
-        productName="Clownfish"
-        productText="(Amphiprioninae)"
-        productPrice="$15"
-        productImage='src/assets/images/clownfish.jpg'/>
+  // Sample fish data (replace this with your actual data)
+  const fishData = [
+    { name: 'Angelfish', text: '(Pterophyllum scalare)', price: '$7', image: 'src/assets/images/angelfish.jpg' },
+    { name: 'Clownfish', text: '(Amphiprioninae)', price: '$15', image: 'src/assets/images/clownfish.jpg' },
+    { name: 'Royal Gramma', text: '(Gramma loreto)', price: '$25', image: 'src/assets/images/gramma.jpg' },
+    { name: 'Blue Tang', text: '(Paracanthurus hepatus)', price: '$30', image: 'src/assets/images/bluetang.jpeg' },
+    { name: 'Garryfish', text: '(Garryfish)', price: '$4', image: 'src/assets/images/garryfish.png' },
+  ];
 
-        <Product
-        onProductAdd={onProductAdd}
-        productName="Royal Gramma"
-        productText="(Gramma loreto)"
-        productPrice="$25"
-        productImage="src/assets/images/gramma.jpg"/>
+  // Filter the fish data based on the searchQuery
+  const filteredFishData = fishData.filter(fish =>
+    fish.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
-        <Product
-        onProductAdd={onProductAdd}
-        productName="Blue Tang"
-        productText="(Paracanthurus hepatus)"
-        productPrice="$30"
-        productImage="src/assets/images/bluetang.jpeg"/>
+  return (
+    <div className="content">
+      <h1>Fancy Fish</h1>
+      <p>blub blub</p>
 
+      {filteredFishData.map(fish => (
         <Product
-        onProductAdd={onProductAdd}
-        productName="Garryfish"
-        productText="(Garryfish)"
-        productPrice="$4"
-        productImage="src/assets/images/garryfish.png"/>
-        </div>
-    );
+          key={fish.name}
+          onProductAdd={onProductAdd}
+          productName={fish.name}
+          productText={fish.text}
+          productPrice={fish.price}
+          productImage={fish.image}
+        />
+      ))}
+
+      {filteredFishData.length === 0 && (
+        <h1>No fish found for '{searchQuery}'</h1>
+      )}
+    </div>
+  );
 }
 
 export default FishPage;

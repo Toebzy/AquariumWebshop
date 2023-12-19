@@ -1,6 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom"
 import { useState, useEffect } from 'react';
 import facade from '../util/apiFacade';
+import SearchComponent from "./Search";
 
 function MainLayout() {
     const init = { username: '', password: '' };
@@ -82,11 +83,7 @@ function MainLayout() {
                                 
                             </NavLink>
                             <div className="search_and_nav">
-                                <div className="search">
-                                    <div>
-                                        <input type="text" className="search_bar" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                                    </div>
-                                </div>
+                               <SearchComponent />
                                 <nav className="navigation">
                                     <ul className="nav_list">
                                         <NavLink to="fish"><li className="nav-item">Fish</li></NavLink>

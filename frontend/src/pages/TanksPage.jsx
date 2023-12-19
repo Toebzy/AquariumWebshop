@@ -1,46 +1,45 @@
+import React, { useContext } from 'react';
+import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
 
-function TanksPage(props,{isAdmin}) {
-    const { onProductAdd} = props;
-    return (
-        <div className="content">
-        <h1>Tranquil Tanks</h1>
-        <p>Let the fishies feel at home</p>
+function TanksPage({ onProductAdd }) {
+  const { searchQuery } = useContext(SearchContext);
 
-        <Product onProductAdd={onProductAdd} productName="Fish Box Moon" 
-        productText="19L" 
-        productPrice="$75" 
-        productImage='src/assets/images/tank19l.jpg'/>
+  // Sample tank data (replace this with your actual data)
+  const tankData = [
+    { name: 'Fish Box Moon', text: '19L', price: '$75', image: 'src/assets/images/tank19l.jpg' },
+    { name: 'Aquatropic LED 60', text: '60L', price: '$145', image: 'src/assets/images/tank60l.jpg' },
+    { name: 'Superfish Tropical Medium', text: '62L', price: '$109.99', image: 'src/assets/images/tank62l.jpg' },
+    { name: 'Fishotronic L 160', text: '160L', price: '$199.99', image: 'src/assets/images/tank160l.jpg' },
+    { name: 'Tetra XL Aquarium', text: '200L', price: '$215', image: 'src/assets/images/tank200l.jpg' },
+  ];
 
+  // Filter the tank data based on the searchQuery
+  const filteredTankData = tankData.filter(tank =>
+    tank.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  return (
+    <div className="content">
+      <h1>Tranquil Tanks</h1>
+      <p>Let the fishies feel at home</p>
+
+      {filteredTankData.map(tank => (
         <Product
-        onProductAdd={onProductAdd}
-        productName="Aquatropic LED 60"
-        productText="60L"
-        productPrice="$145"
-        productImage='src/assets/images/tank60l.jpg'/>
+          key={tank.name}
+          onProductAdd={onProductAdd}
+          productName={tank.name}
+          productText={tank.text}
+          productPrice={tank.price}
+          productImage={tank.image}
+        />
+      ))}
 
-        <Product
-        onProductAdd={onProductAdd}
-        productName="Superfish Tropical Medium"
-        productText="62L"
-        productPrice="$109.99"
-        productImage="src/assets/images/tank62l.jpg"/>
-
-        <Product
-        onProductAdd={onProductAdd}
-        productName="Fishotronic L 160"
-        productText="160L"
-        productPrice="$199.99"
-        productImage="src/assets/images/tank160l.jpg"/>
-
-        <Product
-        onProductAdd={onProductAdd}
-        productName="Tetra XL Aquarium"
-        productText="200L"
-        productPrice="$215"
-        productImage="src/assets/images/tank200l.jpg"/>
-        </div>
-    );
+      {filteredTankData.length === 0 && (
+        <h1>No tanks found for '{searchQuery}'</h1>
+      )}
+    </div>
+  );
 }
 
 export default TanksPage;

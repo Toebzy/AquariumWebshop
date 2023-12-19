@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage';
 import ErrorPage from './pages/ErrorPage';
 import RegisterPage from './pages/RegisterPage';
 import TanksPage from './pages/TanksPage';
+import SearchProvider from './components/SearchProvider';
 
 
 function App() {
@@ -37,9 +38,10 @@ function App() {
     )
   ) 
   return (
-    <>
-    <RouterProvider router={routes} />
-    </>
+    <SearchProvider>
+      <RouterProvider router={routes}>
+      </RouterProvider>
+    </SearchProvider>
   );
 }
 
