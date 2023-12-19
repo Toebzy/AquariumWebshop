@@ -52,9 +52,11 @@ public class UserDao implements IDao<User, String> {
             }
 
             user.addRole(role);
-            em.persist(user);
-            Cart cart = new Cart(user);
+
+            Cart cart = new Cart();
             CartDTO cartDTO = new CartDTO(cart);
+            user.setCart(cart);
+            em.persist(user);
             em.persist(cart);
             em.getTransaction().commit();
 

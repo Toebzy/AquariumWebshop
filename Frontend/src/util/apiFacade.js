@@ -127,6 +127,16 @@ function apiFacade()
         const roles = getUserRoles().split(',')
         return loggedIn && roles.includes(neededRole)
     }
+    const getCart = (onSuccess, onError) => {
+        return fetchData( "carts/"+USER_ROUTE, "GET")
+            .then((cart) => {
+                onSuccess(cart);
+            })
+            .catch((error) => {
+                console.error("Error fetching cart:", error);
+                onError(error);
+            });
+    };
 
     return {
         makeOptions,
@@ -137,7 +147,8 @@ function apiFacade()
         register,
         getUserRoles,
         hasUserAccess,
-        fetchData
+        fetchData,
+        getCart
     }
 
 }

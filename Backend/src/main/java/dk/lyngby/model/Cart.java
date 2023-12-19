@@ -15,6 +15,7 @@ import java.util.Set;
 @Table(name = "carts")
 public class Cart {
     @Id
+    @Basic(optional = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id", nullable = false, unique = true)
     private Integer id;
@@ -26,12 +27,9 @@ public class Cart {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "cart_products",
-            joinColumns = @JoinColumn(name = "cart_id"),
+            joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id")
     )
     private Set<Product> cart_products = new HashSet<>();
-    public Cart(User user){
-        this.user=user;
-    }
 
 }

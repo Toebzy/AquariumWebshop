@@ -4,6 +4,7 @@ import dk.lyngby.dto.CartDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.Serial;
@@ -14,7 +15,9 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "user_name")
+})
 @NamedQueries(@NamedQuery(name = "User.deleteAllRows", query = "DELETE from User"))
 @Getter
 @NoArgsConstructor
@@ -25,7 +28,7 @@ public class User implements Serializable {
 
     @Id
     @Basic(optional = false)
-    @Column(name = "user_name", length = 25)
+    @Column(name = "user_name", length = 25, unique = true)
     private String username;
 
     @Basic(optional = false)
@@ -37,6 +40,11 @@ public class User implements Serializable {
             @JoinColumn(name = "role_name", referencedColumnName = "role_name")})
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roleList = new LinkedHashSet<>();
+
+    @Setter
+    @OneToOne
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
 
     public User(String username, String userPassword) {
         this.username = username;
