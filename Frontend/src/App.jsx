@@ -13,6 +13,7 @@ import ErrorPage from './pages/ErrorPage';
 import RegisterPage from './pages/RegisterPage';
 import TanksPage from './pages/TanksPage';
 import SearchProvider from './components/SearchProvider';
+import CartPage from './pages/CartPage';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="supplies" element={<SuppliesPage isAdmin={isAdmin} />} />
         <Route path="quiz" element={<QuizPage isAdmin={isAdmin} />} />
         <Route path="register" element={<RegisterPage isAdmin={isAdmin} />} />
+        <Route path="cart" element={<CartPage isAdmin={isAdmin} />} />
         <Route path="/" element={<HomePage />}>
         </Route>
         <Route path="*" element={<ErrorPage />}/>
