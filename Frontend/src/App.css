@@ -399,3 +399,35 @@ h1{
 .linkText{
   color: #086bff !important;
 }
+
+.cart-table{
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+.cart-table_row{
+  border: 1px solid #ddd;
+}
+.cart-table_header{
+  background-color: rgb(32, 32, 116);
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 20px;
+  margin-top: 50px;
+}
+.cart-table_section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.cart-table_products{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
