@@ -1,7 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom"
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import facade from '../util/apiFacade';
-import React, { useContext } from 'react';
 import { SearchContext } from "../components/SearchProvider";
 
   const RegisterPage = () => {

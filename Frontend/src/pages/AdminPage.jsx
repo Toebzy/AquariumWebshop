@@ -1,5 +1,5 @@
 import facade from '../util/apiFacade';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { SearchContext } from "../components/SearchProvider";
 function AdminPage() {
   const { searchQuery } = useContext(SearchContext);

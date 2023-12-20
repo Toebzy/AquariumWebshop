@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { SearchContext } from "../components/SearchProvider";
 function QuizPage({isAdmin}) {
     const { searchQuery } = useContext(SearchContext);
