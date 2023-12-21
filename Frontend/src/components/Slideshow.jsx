@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import image1 from '../assets/images/fish1.jpg';
@@ -63,7 +63,6 @@ const Slideshow = () => {
             alt=""
             className={index === activeTab ? 'active' : ''}
           />
-
         ))}
         <div className='slider-text'>
           {carouselData.map((data, index) => (
