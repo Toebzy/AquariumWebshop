@@ -162,8 +162,8 @@ function MainLayout() {
             </header>
 
             <div>
-      <section className="content">
-        <div className="container">
+      <section>
+        <div>
           <div className="row">
             {searchQuery ? (
               // Render search results

@@ -29,8 +29,10 @@ function CartPage({ isAdmin }) {
 
     return (
       <div className="content">
+        <h1>Your cart</h1>
+        <div className='cart-page'>   
         {cart && (
-          <div>
+          <div className='cart-container'>
             <table className="cart-table">
               <thead>
                 <tr className="cart-table_row">
@@ -46,7 +48,7 @@ function CartPage({ isAdmin }) {
                       {item.productName}
                     </td>
                     <td className="cart-table_products_price">
-                      {item.productPrice}
+                      {'$'+item.productPrice}
                     </td>
                     <td className="cart-table_products_image">
                       <img src={item.productImage} alt="Product" height={"58"} width={"58"}/>
@@ -57,6 +59,7 @@ function CartPage({ isAdmin }) {
             </table>
           </div>
         )}
+        </div>
       </div>
     );
 }

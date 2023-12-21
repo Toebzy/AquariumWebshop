@@ -3,8 +3,8 @@ import Slideshow from "../components/Slideshow";
 function HomePage(){
     return (
         <div>
-            <section className="content">
-                <div className="container">
+            <section className="frontpage">
+                <div>
                                 
             <div className="slideshow">
                 <Slideshow />

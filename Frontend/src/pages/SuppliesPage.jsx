@@ -1,6 +1,6 @@
 import Product from "../components/Product";
 
-function SuppliesPage({ onProductAdd }) {x
+function SuppliesPage({ onProductAdd }) {
   const suppliesData = [
     { name: 'TetraMin Tropical Flakes', text: '28G', price: '$12', image: 'src/assets/images/tetra-tropical-flakes.jpg' },
     { name: 'Tetra Cichlid Sticks', text: '30G', price: '$14', image: 'src/assets/images/tetra-cichlid.jpg' },
