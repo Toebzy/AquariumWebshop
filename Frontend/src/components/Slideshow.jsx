@@ -64,6 +64,9 @@ const Slideshow = () => {
             className={index === activeTab ? 'active' : ''}
           />
         ))}
+        <div className='carousel-title'>
+          <h1 className="image-title">FISK MMMMHHH.....</h1>
+        </div>
         <div className='slider-text'>
           {carouselData.map((data, index) => (
             <div
