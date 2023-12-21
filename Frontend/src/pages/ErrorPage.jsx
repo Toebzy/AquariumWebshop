@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
-import { useContext } from 'react';
-import { SearchContext } from "../components/SearchProvider";
 
 function ErrorPage() {
-    const { searchQuery } = useContext(SearchContext);
     return (
         <div className="ErrorPage" >
             <h1>Page not found!</h1>

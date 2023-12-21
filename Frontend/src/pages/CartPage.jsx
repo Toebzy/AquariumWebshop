@@ -22,7 +22,7 @@ function CartPage({ isAdmin }) {
         fetchCart();
     }, []); // The empty dependency array ensures the effect runs only once when the component mounts
 
-    if (!cart || !cart.cart_items) {
+    if (!cart || !cart.cart_items || cart === null) {
         return <div>Loading...</div>; // or handle this case in a way that makes sense for your application
       }
     const total = cart.cart_items.reduce((acc, item) => acc + item.productPrice, 0);
