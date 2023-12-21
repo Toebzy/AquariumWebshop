@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import { useContext} from 'react';
 import Product from "../components/Product";
 
 function FishPage({ onProductAdd }) {

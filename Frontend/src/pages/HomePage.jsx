@@ -4,12 +4,10 @@ function HomePage(){
     return (
         <div>
             <section className="frontpage">
-                <div>
-                                
+                <div>               
             <div className="slideshow">
                 <Slideshow />
             </div>
-
                     <div className="row">
                         <h1>MMMMMMMMMMMMMMMMMMMMMMMMHHHHHH..... FISK</h1>
                         <img src="\src\assets\images\fish.jpg" alt="fish" />
@@ -19,4 +17,5 @@ function HomePage(){
         </div>
     );
 }
+
 export default HomePage;
