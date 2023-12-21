@@ -419,25 +419,16 @@ h1{
   font-weight: 400;
   font-size: 16px;
   padding: 20px;
-  text-align: left;
+  display: space-between;
 }
 .cart-table_products_name,
 .cart-table_products_price {
   background-color: #fff;
   padding: 20px;
-  text-align: left;
-}
-.cart-table_products_price {
-  text-align: right;
-}
-.cart-table_products_image{
-  padding: 20px;
   text-align: center;
-  width: 100px;
-  height: 100px;
 }
 .cart-table_section {
-  display: flex;
+  display: space-between;
   flex-direction: column;
   padding: 20px;
 }
