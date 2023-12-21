@@ -22,6 +22,11 @@ function CartPage({ isAdmin }) {
         fetchCart();
     }, []); // The empty dependency array ensures the effect runs only once when the component mounts
 
+    if (!cart || !cart.cart_items) {
+        return <div>Loading...</div>; // or handle this case in a way that makes sense for your application
+      }
+    const total = cart.cart_items.reduce((acc, item) => acc + item.productPrice, 0);
+
     return (
       <div className="content">
         <h1>CartPage</h1>
@@ -32,8 +37,9 @@ function CartPage({ isAdmin }) {
             <table className="cart-table">
               <thead>
                 <tr className="cart-table_row">
-                  <th className="cart-table_header">Product Name</th>
-                  <th className="cart-table_header">Product Price</th>
+                  <th className="cart-table_header">Product Name:</th>
+                  <th className="cart-table_header">Product Price:</th>
+                  <th className="cart-table_header">Total Price: ${total.toFixed(2)}</th>
                 </tr>
               </thead>
               <tbody className="cart-table_section">
@@ -42,11 +48,11 @@ function CartPage({ isAdmin }) {
                     <td className="cart-table_products_name">
                       {item.productName}
                     </td>
-                    <td className="cart-table_products_price">
-                      {item.productPrice}
-                    </td>
                     <td className="cart-table_products_image">
                       <img src={item.productImage} alt="Product" height={"58"} width={"58"}/>
+                    </td>
+                    <td className="cart-table_products_price">
+                      {item.productPrice}
                     </td>
                   </tr>
                 ))}
