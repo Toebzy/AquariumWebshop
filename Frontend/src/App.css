@@ -402,34 +402,37 @@ h1{
   color: #086bff !important;
 }
 
-.cart-table{
+.cart-table {
   margin: 0 auto;
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   border: 1px solid #ddd;
 }
-.cart-table_row{
+.cart-table_row {
   border: 1px solid #ddd;
 }
-.cart-table_header{
+.cart-table_header {
   background-color: rgb(32, 32, 116);
   color: #fff;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
   padding: 20px;
-  margin-top: 50px;
+  text-align: left;
 }
-.cart-table_section{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.cart-table_products_name,
+.cart-table_products_price {
+  background-color: #fff;
   padding: 20px;
+  text-align: left;
 }
-.cart-table_products{
+.cart-table_products_price {
+  text-align: right;
+
+}
+.cart-table_section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding: 20px;
 }
