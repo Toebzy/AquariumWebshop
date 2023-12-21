@@ -540,12 +540,18 @@ h1{
 .cart-container{
   margin-top: 20px;
   width: 500px;
+  background-color: #fff;
+  border-radius: 20px;
 }
 .cart-page{
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 600px;
+  background-image: url('src/assets/images/bggif.gif');
+  background-size: cover;
+  background-position: center;
 }
-
 .register-container {
   background-image: url('src/assets/images/signupwp.gif');
   background-size: cover;
@@ -554,7 +560,6 @@ h1{
   justify-content: center;
   align-items: center;
 }
-
 .carousel-title{
   position: absolute;
   display: flex;

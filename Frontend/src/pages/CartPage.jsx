@@ -29,7 +29,7 @@ function CartPage({ isAdmin }) {
 
     return (
       <div className="content">
-        <h1>Your cart</h1>
+        <h1>Your cart:</h1>
         <div className='cart-page'>   
         {cart && (
           <div className='cart-container'>
