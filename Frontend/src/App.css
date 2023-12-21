@@ -64,6 +64,7 @@ a{
   margin-top: 15px;
   display: block;
   width: 200px;
+  z-index: 44;
 }
 .under_header{
   font-family: 'Josefin Sans', sans-serif;
@@ -266,14 +267,14 @@ h1{
   left: 0;
   opacity: 40%;
   mask-image:linear-gradient(to right,  rgba(0,0,0,01), rgba(0,0,0,0));
-  z-index: -5;
+  z-index: 3;
 }
 .bubble_right{
   position: absolute;
   right: 0;
   opacity: 40%;
   mask-image:linear-gradient(to left,  rgba(0,0,0,01), rgba(0,0,0,0));
-  z-index: -5;
+  z-index: 3;
 }
 .send-to-cart.cart-item {
   display: block;
