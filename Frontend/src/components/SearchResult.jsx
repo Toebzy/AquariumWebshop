@@ -13,11 +13,12 @@ function SearchResult(){
       }));
 
       return(
-        <div className="content">
+        <div>
           <div className="row">
             {searchQuery ? (
               // Render search results
               <>
+                <div className="content">
                 <h1>Search Results for '{searchQuery}'</h1>
                 <div>
                     {filteredItems.map(itemType => (
@@ -35,6 +36,7 @@ function SearchResult(){
                 {filteredItems.every(itemType => itemType.items.length === 0) && (
                   <p>No results found for '{searchQuery}'</p>
                 )}
+                </div>
               </>
             ) : (
               // Render default content when there's no search query
