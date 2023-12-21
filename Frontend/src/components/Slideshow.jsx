@@ -39,20 +39,20 @@ const Slideshow = () => {
   ];
   
   return (
-<div className="slideshow-container">
+    <div className="slideshow-container">
       {/* Blurry background */}
       <div className='background_container'>
         <div className="slideshow-background">
-        {[image1, image2, image3, image4].map((img, index) => (
-          <img
-            key={index}
-            src={index === activeTab ? img : ''}
-            className={index === activeTab ? 'active' : ''}
-            style={{ backgroundImage: `url(${img})` }}
-          />
-        ))}
-      </div>
-      
+          {[image1, image2, image3, image4].map((img, index) => (
+            <img
+              key={index}
+              src={index === activeTab ? img : ''}
+              className={index === activeTab ? 'active' : ''}
+              style={{ backgroundImage: `url(${img})` }}
+            />
+          ))}
+        </div>
+
       </div>
 
       <div className="slideshow-images">

@@ -20,6 +20,7 @@ public class Cart {
     @Column(name = "cart_id", nullable = false, unique = true)
     private Integer id;
 
+    @Setter
     @OneToOne
     private User user;
 

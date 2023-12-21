@@ -29,6 +29,6 @@ POST {{url}}/carts/2/products/1
 Authorization: Bearer {{token}}
 
 ###
-GET {{url}}/carts/2
+GET {{url}}/carts
 Authorization: Bearer {{token}}
 

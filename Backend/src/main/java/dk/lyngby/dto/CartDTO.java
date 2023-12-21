@@ -20,6 +20,7 @@ public class CartDTO {
         if (cart.getCart_products() != null){
             cart.getCart_products().forEach(product -> cart_items.add(new ProductDTO(product)));
         }
+        this.user=new UserDTO(cart.getUser());
     }
 
     private Set<ProductDTO> cart_items = new HashSet<>();
