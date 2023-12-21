@@ -22,19 +22,19 @@ function HomePage() {
               // Render search results
               <>
                 <h1>Search Results for '{searchQuery}'</h1>
-                {filteredItems.map(itemType => (
-                  <div key={itemType.type}>
-                    {itemType.items.map(item => (
-                      <Product
+                <div>
+                    {filteredItems.map(itemType => (
+                    itemType.items.map(item => (
+                        <Product
                         key={item.name}
                         productName={item.name}
                         productText={item.text}
                         productPrice={item.price}
                         productImage={item.image}
-                      />
+                        />
+                    ))
                     ))}
-                  </div>
-                ))}
+                </div>
                 {filteredItems.every(itemType => itemType.items.length === 0) && (
                   <p>No results found for '{searchQuery}'</p>
                 )}
