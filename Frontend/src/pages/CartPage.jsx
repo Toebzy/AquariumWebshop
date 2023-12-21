@@ -29,11 +29,8 @@ function CartPage({ isAdmin }) {
 
     return (
       <div className="content">
-        <h1>CartPage</h1>
-        <p>This is for Users only.</p>
         {cart && (
           <div>
-            <h2>Your Cart:</h2>
             <table className="cart-table">
               <thead>
                 <tr className="cart-table_row">
