@@ -13,8 +13,7 @@ function SearchResult(){
       }));
 
       return(
-        <section>
-        <div>
+        <div className="content">
           <div className="row">
             {searchQuery ? (
               // Render search results
@@ -45,7 +44,6 @@ function SearchResult(){
             )}
           </div>
         </div>
-      </section>
       )
 
 }
