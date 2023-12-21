@@ -99,6 +99,7 @@ a{
   align-items: center;
   justify-content: center;
   width: 66px; 
+  z-index: 14;
 }
 .header__button-icon{
    width: 25px;  
