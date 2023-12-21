@@ -429,7 +429,12 @@ h1{
 }
 .cart-table_products_price {
   text-align: right;
-
+}
+.cart-table_products_image{
+  padding: 20px;
+  text-align: center;
+  width: 100px;
+  height: 100px;
 }
 .cart-table_section {
   display: flex;

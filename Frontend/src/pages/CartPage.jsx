@@ -45,6 +45,9 @@ function CartPage({ isAdmin }) {
                     <td className="cart-table_products_price">
                       {item.productPrice}
                     </td>
+                    <td className="cart-table_products_image">
+                      <img src={item.productImage} alt="Product" height={"58"} width={"58"}/>
+                    </td>
                   </tr>
                 ))}
               </tbody>
