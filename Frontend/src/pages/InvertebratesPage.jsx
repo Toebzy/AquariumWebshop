@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
+import { searchItems } from '../components/Search';
 
 function InvertebratesPage({ onProductAdd }) {
   const { searchQuery } = useContext(SearchContext);
@@ -15,9 +16,7 @@ function InvertebratesPage({ onProductAdd }) {
   ];
 
   // Filter the invertebrate data based on the searchQuery
-  const filteredInvertebrateData = invertebrateData.filter(invertebrate =>
-    invertebrate.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredInvertebrateData = searchItems(invertebrateData, searchQuery);
 
   return (
     <div className="content">
@@ -36,7 +35,7 @@ function InvertebratesPage({ onProductAdd }) {
       ))}
 
       {filteredInvertebrateData.length === 0 && (
-        <h1>No invertebrates found for '{searchQuery}'</h1>
+        <p>No invertebrates found for '{searchQuery}'</p>
       )}
     </div>
   );

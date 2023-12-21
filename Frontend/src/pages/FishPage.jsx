@@ -1,6 +1,7 @@
 import React, { useContext} from 'react';
 import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
+import { searchItems } from '../components/Search';
 
 function FishPage({ onProductAdd }) {
   const { searchQuery } = useContext(SearchContext);
@@ -15,9 +16,7 @@ function FishPage({ onProductAdd }) {
 
   
   // Filter the fish data based on the searchQuery
-  const filteredFishData = fishData.filter(fish =>
-    fish.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredFishData = searchItems(fishData, searchQuery);
 
   return (
     <div className="content">
@@ -35,7 +34,7 @@ function FishPage({ onProductAdd }) {
       ))}
 
 {filteredFishData.length === 0 && (
-        <h1>No fish found for '{searchQuery}'</h1>
+        <p>No fish found for '{searchQuery}'</p>
       )}
     </div>
   );
