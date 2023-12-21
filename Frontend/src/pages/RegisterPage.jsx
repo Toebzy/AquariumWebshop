@@ -4,7 +4,9 @@ import facade from "../util/apiFacade";
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [registerError, setRegisterError] = useState(null);
   const handleRegister = () => {
+    event.preventDefault();
     facade.register(
       username,
       password,
@@ -13,7 +15,7 @@ const RegisterPage = () => {
         console.log("Registration successful");
       },
       () => {
-        // Registration failed, handle the error (e.g., show an error message)
+        setRegisterError("Failed during registration")
         console.log("Registration failed");
       }
     );
@@ -42,6 +44,7 @@ const RegisterPage = () => {
         </label>
         <br />
         <button onClick={handleRegister}>Register</button>
+        {registerError && <div className="loginError">{registerError}</div>} 
       </form>
     </div>
   );

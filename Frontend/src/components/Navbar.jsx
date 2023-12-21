@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { useState, useEffect, useContext } from 'react';
 import facade from '../util/apiFacade';
 import SearchComponent from "./Search";
@@ -9,6 +9,8 @@ function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [loginError, setLoginError] = useState(null);
+    const [userRole, setUserRole] = useState(null);
+    const navigate = useNavigate();
 
 
     const performLogin = (evt) => {
@@ -29,9 +31,12 @@ function Navbar() {
         );
       };
     const performLogout = () => {
-      facade.logout(() => {
-        setIsLoggedIn(false);
-        setUserRole(null);
+        facade.logout(() => {
+          setIsLoggedIn(false);
+          setUserRole(null);
+          
+          // Redirect to the homepage after logout
+          navigate('/');
       });
     };
     const onChange = (evt) => {
