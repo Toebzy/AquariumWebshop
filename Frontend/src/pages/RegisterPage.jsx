@@ -24,8 +24,8 @@ const RegisterPage = () => {
   return (
     <div className="register-container">
     <div className="content">
-      <h2>Sign up here</h2>
       <form className="register-form">
+        <h2 className="register-form-header">Sign up here</h2>
         <label>
           <input
             type="text"
