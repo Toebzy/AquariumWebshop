@@ -2,10 +2,11 @@ import { useContext } from 'react';
 import { SearchContext } from './SearchProvider';
 
 const SearchComponent = () => {
-  const { handleSearch } = useContext(SearchContext);
+  const { inputValue, handleSearch, updateInputValue } = useContext(SearchContext);
 
   const handleInputChange = (e) => {
     const query = e.target.value;
+    updateInputValue(query);
     handleSearch(query);
   };
 
@@ -13,6 +14,7 @@ const SearchComponent = () => {
     <div className="search">
       <input
         type="text"
+        value={inputValue}
         className="search_bar"
         placeholder="Search"
         aria-label="Search"

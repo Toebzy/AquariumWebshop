@@ -1,6 +1,6 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, NavLink } from 'react-router-dom';
+import { useState, useEffect, useContext } from 'react';
+import { BrowserRouter, Route, Routes, RouterProvider, createBrowserRouter, createRoutesFromElements, NavLink, useLocation} from 'react-router-dom';
 import MainLayout from './components/Navbar';
 import UserPage from './pages/UserPage';
 import AdminPage from './pages/AdminPage';
@@ -13,16 +13,35 @@ import ErrorPage from './pages/ErrorPage';
 import RegisterPage from './pages/RegisterPage';
 import TanksPage from './pages/TanksPage';
 import SearchProvider from './components/SearchProvider';
+import { SearchContext } from './components/SearchProvider';
 import CartPage from './pages/CartPage';
 
 
 function App() {
-  
+  return (
+
+    <BrowserRouter>
+      <SearchProvider>
+        <Inner/>
+      </SearchProvider>
+    </BrowserRouter>
+  );
+}
+function Inner(){
+  const location = useLocation();
+  const { clearSearch } = useContext(SearchContext);
+
   const [isAdmin, setIsAdmin] = useState(false);
+  // Listen for route changes and clear search query
+  useEffect(() => {
+    // Call clearSearch when the route changes
+
+    clearSearch();
+  }, [location]);
   
-  const routes = createBrowserRouter(
-    createRoutesFromElements(
-      
+
+  return(
+    <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route path="user" element={<UserPage isAdmin={isAdmin} />} />
         <Route path="admin" element={<AdminPage isAdmin={isAdmin} />} />
@@ -36,15 +55,9 @@ function App() {
         <Route path="/" element={<HomePage />}>
         </Route>
         <Route path="*" element={<ErrorPage />}/>
-      </Route>
-    )
-  ) 
-  return (
-    <SearchProvider>
-      <RouterProvider router={routes}>
-      </RouterProvider>
-    </SearchProvider>
-  );
+      </Route></Routes>
+  )
+  
 }
 
 export default App;
