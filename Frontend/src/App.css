@@ -522,3 +522,11 @@ h1{
   display: flex;
   justify-content: center;
 }
+.register-container {
+  background-image: url('src/assets/images/signupwp.gif');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

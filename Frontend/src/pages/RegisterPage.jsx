@@ -22,6 +22,7 @@ const RegisterPage = () => {
   };
 
   return (
+    <div className="register-container">
     <div className="content">
       <h2>Sign up here</h2>
       <form className="register-form">
@@ -46,6 +47,7 @@ const RegisterPage = () => {
         <button onClick={handleRegister}>Register</button>
         {registerError && <div className="loginError">{registerError}</div>} 
       </form>
+      </div>
     </div>
   );
 };
