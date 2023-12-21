@@ -146,7 +146,17 @@ function apiFacade()
             return roles
         } else return ""
     }
-
+    const getUsername = () =>
+    {
+        const token = getToken()
+        if (token != null)
+        {
+            const payloadBase64 = getToken().split('.')[1]
+            const decodedClaims = JSON.parse(window.atob(payloadBase64))
+            const username = decodedClaims.sub
+            return username
+        } else return ""
+    }
     const hasUserAccess = (neededRole, loggedIn) =>
     {
         const roles = getUserRoles().split(',')
@@ -171,7 +181,6 @@ function apiFacade()
                 console.error("Error fetching cart:", error);
             });
     };
-
     const getFish = (onSuccess, onError) => {
         return fetchData( `products/fish`, "GET")
             .then((fish) => {
@@ -197,7 +206,8 @@ function apiFacade()
         fetchData,
         getCart,
         getFish,
-        addToCart
+        addToCart,
+        getUsername
     }
 
 }

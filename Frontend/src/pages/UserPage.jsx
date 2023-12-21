@@ -23,7 +23,7 @@ function UserPage({ isAdmin }) {
   
   return (
     <div className="content">
-      <h1>User page</h1>
+        <h1>Welcome {facade.getUsername()}</h1>
       <p>This is for Users only.</p>
       {cart && (
         <div>
