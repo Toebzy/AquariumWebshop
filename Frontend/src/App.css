@@ -102,6 +102,7 @@ a{
 }
 .header__button-icon{
    width: 25px;  
+   height: 22px;
 }
 .button_text{
   color:  rgb(156, 156, 240);
