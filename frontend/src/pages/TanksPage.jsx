@@ -1,11 +1,6 @@
-import { useContext } from 'react';
-import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
-import { searchItems } from '../components/Search';
 
 function TanksPage({ onProductAdd }) {
-  const { searchQuery } = useContext(SearchContext);
-
   const tankData = [
     { name: 'Fish Box Moon', text: '19L', price: '$75', image: 'src/assets/images/tank19l.jpg' },
     { name: 'Aquatropic LED 60', text: '60L', price: '$145', image: 'src/assets/images/tank60l.jpg' },
@@ -14,14 +9,11 @@ function TanksPage({ onProductAdd }) {
     { name: 'Tetra XL Aquarium', text: '200L', price: '$215', image: 'src/assets/images/tank200l.jpg' },
   ];
 
-  const filteredTankData = searchItems(tankData, searchQuery);
-
   return (
     <div className="content">
       <h1>Tranquil Tanks</h1>
       <p>Let the fishies feel at home</p>
-
-      {filteredTankData.map(tank => (
+      {tankData.map(tank => (
         <Product
           key={tank.name}
           onProductAdd={onProductAdd}
@@ -31,10 +23,6 @@ function TanksPage({ onProductAdd }) {
           productImage={tank.image}
         />
       ))}
-
-      {filteredTankData.length === 0 && (
-        <p>No tanks found for '{searchQuery}'</p>
-      )}
     </div>
   );
 }

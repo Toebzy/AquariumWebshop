@@ -1,12 +1,8 @@
 import React, { useContext } from 'react';
 import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
-import { searchItems } from '../components/Search';
 
 function InvertebratesPage({ onProductAdd }) {
-  const { searchQuery } = useContext(SearchContext);
-
-  // Sample invertebrate data (replace this with your actual data)
   const invertebrateData = [
     { name: 'Moon Jellyfish', text: '(Aurelia aurita)', price: '$20', image: 'https://www.eopugetsound.org/sites/default/files/styles/magazinewidth_592px/public/topical_article/images/moon_jellyfish.jpg?itok=Esreg6zX'},
     { name: 'Anemone', text: '(Rose Bubble Tip)', price: '$140', image: 'https://static.wixstatic.com/media/f14946_e93a30d15ec24361805c00b3f721ddd1~mv2.jpg/v1/fill/w_2034,h_2036,al_c,q_85/f14946_e93a30d15ec24361805c00b3f721ddd1~mv2.jpg' },
@@ -15,15 +11,11 @@ function InvertebratesPage({ onProductAdd }) {
     { name: 'Blue Tuxedo Urchin', text: '(Mespilia sp.) ', price: '$29', image: 'https://www.discountcoral.com/cdn/shop/products/BlueTuxedoUrchin.jpg?v=1661358001' },
   ];
 
-  // Filter the invertebrate data based on the searchQuery
-  const filteredInvertebrateData = searchItems(invertebrateData, searchQuery);
-
   return (
     <div className="content">
-      <h1> Incredible Invertebrates</h1>
+      <h1>Incredible Invertebrates</h1>
       <p>no skellyton havers</p>
-
-      {filteredInvertebrateData.map(invertebrate => (
+      {invertebrateData.map(invertebrate => (
         <Product
           key={invertebrate.name}
           onProductAdd={onProductAdd}
@@ -33,10 +25,6 @@ function InvertebratesPage({ onProductAdd }) {
           productImage={invertebrate.image}
         />
       ))}
-
-      {filteredInvertebrateData.length === 0 && (
-        <p>No invertebrates found for '{searchQuery}'</p>
-      )}
     </div>
   );
 }

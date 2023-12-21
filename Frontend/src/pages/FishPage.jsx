@@ -1,10 +1,7 @@
 import React, { useContext} from 'react';
-import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
-import { searchItems } from '../components/Search';
 
 function FishPage({ onProductAdd }) {
-  const { searchQuery } = useContext(SearchContext);
 
   const fishData = [
     { id: 1, name: 'Angelfish', text: '(Pterophyllum scalare)', price: '$7', image: 'src/assets/images/angelfish.jpg' },
@@ -14,15 +11,11 @@ function FishPage({ onProductAdd }) {
     { id: 5, name: 'Garryfish', text: '(Garryfish)', price: '$4', image: 'src/assets/images/garryfish.jpg' },
   ];
 
-  
-  // Filter the fish data based on the searchQuery
-  const filteredFishData = searchItems(fishData, searchQuery);
-
   return (
     <div className="content">
       <h1>Fancy Fish</h1>
       <p>blub blub</p>
-      {filteredFishData.map(fish => (
+      {fishData.map(fish => (
         <Product
           productId={fish.id}
           onProductAdd={onProductAdd}
@@ -32,10 +25,6 @@ function FishPage({ onProductAdd }) {
           productImage={fish.image}
         />
       ))}
-
-{filteredFishData.length === 0 && (
-        <p>No fish found for '{searchQuery}'</p>
-      )}
     </div>
   );
 }

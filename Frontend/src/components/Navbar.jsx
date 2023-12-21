@@ -1,7 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import facade from '../util/apiFacade';
 import SearchComponent from "./Search";
+import { SearchContext } from "../components/SearchProvider";
+import Product from "../components/Product"; 
+import { searchItems, allItems } from '../components/Search';
 
 function MainLayout() {
     const init = { username: '', password: '' };
@@ -9,6 +12,12 @@ function MainLayout() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [loginError, setLoginError] = useState(null);
+    const { searchQuery } = useContext(SearchContext);
+
+  const filteredItems = allItems.map(itemType => ({
+    type: itemType.type,
+    items: searchItems(itemType.items, searchQuery)
+  }));
 
     const performLogin = (evt) => {
         evt.preventDefault();
@@ -64,9 +73,6 @@ function MainLayout() {
       
           return () => clearInterval(intervalId); // Cleanup the interval on component unmount
         }, [funFactsList.length]);
-      
-
-
 
     return (
         <div id="page">
@@ -156,8 +162,40 @@ function MainLayout() {
             </header>
 
             <div>
-                <Outlet />
-            </div>
+      <section className="content">
+        <div className="container">
+          <div className="row">
+            {searchQuery ? (
+              // Render search results
+              <>
+                <h1>Search Results for '{searchQuery}'</h1>
+                <div>
+                    {filteredItems.map(itemType => (
+                    itemType.items.map(item => (
+                        <Product
+                        key={item.name}
+                        productName={item.name}
+                        productText={item.text}
+                        productPrice={item.price}
+                        productImage={item.image}
+                        />
+                    ))
+                    ))}
+                </div>
+                {filteredItems.every(itemType => itemType.items.length === 0) && (
+                  <p>No results found for '{searchQuery}'</p>
+                )}
+              </>
+            ) : (
+              // Render default content when there's no search query
+              <>
+               <Outlet/> 
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+    </div>
 
             <div className="footer-background">
                 <div className="footer-container">
