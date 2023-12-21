@@ -9,8 +9,7 @@ function HomePage(){
                 <Slideshow />
             </div>
                     <div className="row">
-                        <h1>MMMMMMMMMMMMMMMMMMMMMMMMHHHHHH..... FISK</h1>
-                        <img src="\src\assets\images\fish.jpg" alt="fish" />
+                        <h1><br></br>MMMMMMMMMMMMMMMMMMMMMMMMHHHHHH..... FISK</h1>
                     </div>
                 </div>
             </section>

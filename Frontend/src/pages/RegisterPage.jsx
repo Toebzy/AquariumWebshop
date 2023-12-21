@@ -20,7 +20,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="register-form">
+    <div className="content">
       <h2>Sign up here</h2>
       <form className="register-form">
         <label>

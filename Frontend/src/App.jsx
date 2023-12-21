@@ -1,7 +1,7 @@
 import './App.css';
 import { useState, useEffect, useContext } from 'react';
 import { BrowserRouter, Route, Routes, RouterProvider, createBrowserRouter, createRoutesFromElements, NavLink, useLocation} from 'react-router-dom';
-import MainLayout from './components/Navbar';
+import MainLayout from './components/MainLayout';
 import UserPage from './pages/UserPage';
 import AdminPage from './pages/AdminPage';
 import FishPage from './pages/FishPage';
@@ -23,6 +23,7 @@ function App() {
     <BrowserRouter>
       <SearchProvider>
         <Inner/>
+   
       </SearchProvider>
     </BrowserRouter>
   );
