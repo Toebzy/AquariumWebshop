@@ -39,7 +39,7 @@ function CartPage({ isAdmin }) {
                 <tr className="cart-table_row">
                   <th className="cart-table_header">Product Name:</th>
                   <th className="cart-table_header">Product Price:</th>
-                  <th className="cart-table_header">Total Price: ${total}</th>
+                  <th className="cart-table_header">Total Price: ${total.toFixed(2)}</th>
                 </tr>
               </thead>
               <tbody className="cart-table_section">
