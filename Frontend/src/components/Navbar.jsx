@@ -2,14 +2,18 @@ import { NavLink, useNavigate } from "react-router-dom"
 import { useState, useEffect, useContext } from 'react';
 import facade from '../util/apiFacade';
 import SearchComponent from "./Search";
- const init = { username: '', password: '' };
+
+
+function Navbar() { 
+    
+    const init = { username: '', password: '' };
     const [loginCredentials, setLoginCredentials] = useState(init);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [loginError, setLoginError] = useState(null);
     const [userRole, setUserRole] = useState(null);
     const navigate = useNavigate();
-export const performLogin = (evt) => {
+    const performLogin = (evt) => {
         evt.preventDefault();
         facade.login(
           loginCredentials.username,
@@ -26,8 +30,6 @@ export const performLogin = (evt) => {
             }
         );
       };
-
-function Navbar() {
     const performLogout = () => {
         facade.logout(() => {
           setIsLoggedIn(false);
