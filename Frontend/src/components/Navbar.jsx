@@ -3,7 +3,17 @@ import { useState, useEffect, useContext } from 'react';
 import facade from '../util/apiFacade';
 import SearchComponent from "./Search";
 
-const performLogin = (loginCredentials, setIsLoggedIn, setShowLoginModal, setLoginError) => {
+
+
+function Navbar() { 
+    const init = { username: '', password: '' };
+    const [loginCredentials, setLoginCredentials] = useState(init);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [loginError, setLoginError] = useState(null);
+    const [userRole, setUserRole] = useState(null);
+    const navigate = useNavigate();
+    const performLogin = (loginCredentials, setIsLoggedIn, setShowLoginModal, setLoginError) => {
         facade.login(
           loginCredentials.username,
           loginCredentials.password,
@@ -19,15 +29,6 @@ const performLogin = (loginCredentials, setIsLoggedIn, setShowLoginModal, setLog
             }
         );
       };
-
-function Navbar() { 
-    const init = { username: '', password: '' };
-    const [loginCredentials, setLoginCredentials] = useState(init);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [showLoginModal, setShowLoginModal] = useState(false);
-    const [loginError, setLoginError] = useState(null);
-    const [userRole, setUserRole] = useState(null);
-    const navigate = useNavigate();
 
     const performLoginHandler = (evt) => {
         evt.preventDefault();
@@ -76,6 +77,7 @@ function Navbar() {
         }, [funFactsList.length]);
 
     return (
+        performLogin,
         <div id="page">
             <header>
                 <div className="header_background">
@@ -167,5 +169,5 @@ function Navbar() {
     );
 }
 
-export { performLogin };
+
 export default Navbar;

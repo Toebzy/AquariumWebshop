@@ -1,7 +1,7 @@
 import { useState } from "react";
 import facade from "../util/apiFacade";
 import { useNavigate } from 'react-router-dom';
-import { performLogin } from "../components/Navbar";
+import Navbar from "../components/Navbar";
 
 const RegisterPage = () => {
   const init = { username: '', password: '' };
@@ -25,12 +25,8 @@ const RegisterPage = () => {
 
     try {
       // Register user
-      await facade.register(loginCredentials.username,
+      facade.register(loginCredentials.username,
         loginCredentials.password);
-
-      // If registration is successful, perform login
-      performLogin(loginCredentials);
-
       // Navigate to the desired page after successful login
       navigate('/');
     } catch (error) {
