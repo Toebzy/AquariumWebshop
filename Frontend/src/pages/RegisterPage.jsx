@@ -25,7 +25,7 @@ const RegisterPage = () => {
 
     try {
       // Register user
-      facade.register(loginCredentials.username,
+      await facade.register(loginCredentials.username,
         loginCredentials.password);
       // Navigate to the desired page after successful login
       navigate('/');

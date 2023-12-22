@@ -6,6 +6,7 @@ import SearchComponent from "./Search";
 
 
 function Navbar() { 
+
     const init = { username: '', password: '' };
     const [loginCredentials, setLoginCredentials] = useState(init);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,6 +14,7 @@ function Navbar() {
     const [loginError, setLoginError] = useState(null);
     const [userRole, setUserRole] = useState(null);
     const navigate = useNavigate();
+
     const performLogin = (loginCredentials, setIsLoggedIn, setShowLoginModal, setLoginError) => {
         facade.login(
           loginCredentials.username,
@@ -77,7 +79,6 @@ function Navbar() {
         }, [funFactsList.length]);
 
     return (
-        performLogin,
         <div id="page">
             <header>
                 <div className="header_background">
