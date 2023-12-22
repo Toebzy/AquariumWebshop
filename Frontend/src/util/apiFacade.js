@@ -83,14 +83,13 @@ function apiFacade()
        };
  
 
-      const register = (user, password, onSuccess, onError) => {
+      const register = (user, password, onError) => {
         const payload = { username: user, password: password, role: "user"};
         const options = makeOptions("POST", payload);
     
         return fetch(URL + REGISTER_ROUTE, options)
             .then(handleHttpErrors)
             .then((json) => {
-                onSuccess(true);
                 setToken(json.token);
             })
             .catch((error) => {

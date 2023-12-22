@@ -1,57 +1,75 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import facade from "../util/apiFacade";
+import { useNavigate } from 'react-router-dom';
+import { performLogin } from "../components/Navbar";
 
 const RegisterPage = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const init = { username: '', password: '' };
+  const [loginCredentials, setLoginCredentials] = useState(init);
   const [registerError, setRegisterError] = useState(null);
-  const handleRegister = () => {
+  const navigate = useNavigate();
+
+  const onChange = (evt) => {
+    setLoginCredentials({
+      ...loginCredentials,
+      [evt.target.id]: evt.target.value,
+    });
+  };
+
+  const handleRegister = async (event) => {
     event.preventDefault();
-    facade.register(
-      username,
-      password,
-      () => {
-        // Registration successful, you can redirect or handle it as needed
-        console.log("Registration successful");
-      },
-      () => {
-        setRegisterError("Failed during registration")
-        console.log("Registration failed");
+    if (username.length < 3 || password.length < 3) {
+      setRegisterError("Username and password must be at least 3 characters long");
+      return;
+    }
+
+    try {
+      // Register user
+      await facade.register(loginCredentials.username,
+        loginCredentials.password);
+
+      // If registration is successful, perform login
+      performLogin(loginCredentials);
+
+      // Navigate to the desired page after successful login
+      navigate('/');
+    } catch (error) {
+      if (error.status === 409) {
+        setRegisterError("Username already exists");
+      } else {
+        setRegisterError("Registration failed");
       }
-    );
+    }
   };
 
   return (
     <div className="register-container">
-    <div className="content">
-      <form className="register-form">
-        <h2 className="register-form-header">Sign up here</h2>
-          <div className="register-labels">
+      <div className="content">
+        <form className="register-form" onChange={onChange}>
+          <h2 className="register-form-header">Sign up here</h2>
           <label>
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-          </div>
-        <br />
-        <button onClick={handleRegister}>Register</button>
-        {registerError && <div className="loginError">{registerError}</div>} 
-      </form>
+            <input
+              type="text"
+              placeholder="Username"
+              id="username"
+            />
+          </label>
+          <br />
+          <label>
+            <input
+              type="password"
+              placeholder="Password"
+              id="password"
+            />
+          </label>
+          <br />
+          {registerError && <div className="loginError">{registerError}</div>}
+          <button onClick={handleRegister}>Register</button>
+        </form>
       </div>
     </div>
   );
 };
+
 
 export default RegisterPage;

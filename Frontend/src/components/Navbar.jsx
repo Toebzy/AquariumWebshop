@@ -3,18 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import facade from '../util/apiFacade';
 import SearchComponent from "./Search";
 
-
-function Navbar() { 
-    
-    const init = { username: '', password: '' };
-    const [loginCredentials, setLoginCredentials] = useState(init);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [showLoginModal, setShowLoginModal] = useState(false);
-    const [loginError, setLoginError] = useState(null);
-    const [userRole, setUserRole] = useState(null);
-    const navigate = useNavigate();
-    const performLogin = (evt) => {
-        evt.preventDefault();
+const performLogin = (loginCredentials, setIsLoggedIn, setShowLoginModal, setLoginError) => {
         facade.login(
           loginCredentials.username,
           loginCredentials.password,
@@ -30,6 +19,21 @@ function Navbar() {
             }
         );
       };
+
+function Navbar() { 
+    const init = { username: '', password: '' };
+    const [loginCredentials, setLoginCredentials] = useState(init);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [showLoginModal, setShowLoginModal] = useState(false);
+    const [loginError, setLoginError] = useState(null);
+    const [userRole, setUserRole] = useState(null);
+    const navigate = useNavigate();
+
+    const performLoginHandler = (evt) => {
+        evt.preventDefault();
+        performLogin(loginCredentials, setIsLoggedIn, setShowLoginModal, setLoginError, navigate);
+      };
+    
     const performLogout = () => {
         facade.logout(() => {
           setIsLoggedIn(false);
@@ -138,7 +142,7 @@ function Navbar() {
                                         <input placeholder="Password" id="password" type="password" />     
                                         {loginError && <div className="loginError">{loginError}</div>} 
                                         <div>                                             
-                                        <button onClick={performLogin}>Login</button>
+                                        <button onClick={performLoginHandler}>Login</button>
                                         <NavLink to="register">
                                         <button onClick={toggleLoginModal}>Sign up</button>
                                         </NavLink>
@@ -163,4 +167,5 @@ function Navbar() {
     );
 }
 
+export { performLogin };
 export default Navbar;
