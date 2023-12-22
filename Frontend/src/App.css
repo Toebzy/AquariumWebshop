@@ -234,7 +234,6 @@ a{
 .register-form{
   width: 100%;
   display: flex;
-  padding:15px;
   flex-direction: column;
   margin: 20px;
   align-items: center;
@@ -493,8 +492,8 @@ h1{
 
 .slideshow-background {
   top: -15px;
-  left: 0;
-  width: 100vw;
+  left:-15px;
+  width: 102vw;
   z-index: -1;
   filter: blur(10px); /* Adjust the blur strength as needed */
   transition: opacity 0.5s ease-in-out;
@@ -646,7 +645,7 @@ h1{
   border-radius: 9px;
   font-size: 18px;
   color: #ffffff;
-  padding: 10px 42px;
+  padding: 10px 12px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -677,4 +676,8 @@ h1{
 .result p span {
   color: rgb(32, 32, 116);;
   font-size: 22px;
+}
+
+.product-card_info_button{
+  font-size: 0.8923rem !important;
 }

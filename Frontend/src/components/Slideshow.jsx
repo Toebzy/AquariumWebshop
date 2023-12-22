@@ -65,7 +65,7 @@ const Slideshow = () => {
           />
         ))}
         <div className='carousel-title'>
-          <h1 className="image-title">FISK MMMMHHH.....</h1>
+          <h1 className="image-title">AQUAROMA</h1>
         </div>
         <div className='slider-text'>
           {carouselData.map((data, index) => (

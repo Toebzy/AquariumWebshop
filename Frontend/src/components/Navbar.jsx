@@ -15,7 +15,8 @@ function Navbar() {
     const [userRole, setUserRole] = useState(null);
     const navigate = useNavigate();
 
-    const performLogin = (loginCredentials, setIsLoggedIn, setShowLoginModal, setLoginError) => {
+    const performLogin = (evt) => {
+        evt.preventDefault();
         facade.login(
           loginCredentials.username,
           loginCredentials.password,
@@ -30,11 +31,6 @@ function Navbar() {
             setLoginError('Invalid username or password');
             }
         );
-      };
-
-    const performLoginHandler = (evt) => {
-        evt.preventDefault();
-        performLogin(loginCredentials, setIsLoggedIn, setShowLoginModal, setLoginError, navigate);
       };
     
     const performLogout = () => {
@@ -145,7 +141,7 @@ function Navbar() {
                                         <input placeholder="Password" id="password" type="password" />     
                                         {loginError && <div className="loginError">{loginError}</div>} 
                                         <div>                                             
-                                        <button onClick={performLoginHandler}>Login</button>
+                                        <button onClick={performLogin}>Login</button>
                                         <NavLink to="register">
                                         <button onClick={toggleLoginModal}>Sign up</button>
                                         </NavLink>
