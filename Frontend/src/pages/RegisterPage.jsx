@@ -26,7 +26,8 @@ const RegisterPage = () => {
     <div className="content">
       <form className="register-form">
         <h2 className="register-form-header">Sign up here</h2>
-        <label>
+          <div className="register-labels">
+          <label>
           <input
             type="text"
             placeholder="Username"
@@ -43,6 +44,7 @@ const RegisterPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
+          </div>
         <br />
         <button onClick={handleRegister}>Register</button>
         {registerError && <div className="loginError">{registerError}</div>} 

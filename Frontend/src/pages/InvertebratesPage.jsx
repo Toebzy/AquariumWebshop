@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
 
-function InvertebratesPage({ onProductAdd }) {
+function InvertebratesPage() {
   const invertebrateData = [
     { name: 'Moon Jellyfish', text: '(Aurelia aurita)', price: '$20', image: 'https://www.eopugetsound.org/sites/default/files/styles/magazinewidth_592px/public/topical_article/images/moon_jellyfish.jpg?itok=Esreg6zX'},
     { name: 'Anemone', text: '(Rose Bubble Tip)', price: '$140', image: 'https://static.wixstatic.com/media/f14946_e93a30d15ec24361805c00b3f721ddd1~mv2.jpg/v1/fill/w_2034,h_2036,al_c,q_85/f14946_e93a30d15ec24361805c00b3f721ddd1~mv2.jpg' },
@@ -18,7 +18,6 @@ function InvertebratesPage({ onProductAdd }) {
       {invertebrateData.map(invertebrate => (
         <Product
           key={invertebrate.name}
-          onProductAdd={onProductAdd}
           productName={invertebrate.name}
           productText={invertebrate.text}
           productPrice={invertebrate.price}

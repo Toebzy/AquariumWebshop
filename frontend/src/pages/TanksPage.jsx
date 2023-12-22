@@ -1,6 +1,6 @@
 import Product from "../components/Product";
 
-function TanksPage({ onProductAdd }) {
+function TanksPage() {
   const tankData = [
     {name: "Fish Box Moon",text: "19L",price: "$75",image: "src/assets/images/tank19l.jpg",},
     {name: "Aquatropic LED 60",text: "60L",price: "$145",image: "src/assets/images/tank60l.jpg",},
@@ -16,7 +16,6 @@ function TanksPage({ onProductAdd }) {
       {tankData.map((tank) => (
         <Product
           key={tank.name}
-          onProductAdd={onProductAdd}
           productName={tank.name}
           productText={tank.text}
           productPrice={tank.price}

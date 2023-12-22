@@ -1,7 +1,8 @@
 import { useContext} from 'react';
 import Product from "../components/Product";
+import Navbar from '../components//Navbar';
 
-function FishPage({ onProductAdd }) {
+function FishPage() {
   const fishData = [
     { id: 1, name: 'Angelfish', text: '(Pterophyllum scalare)', price: '$7', image: 'src/assets/images/angelfish.jpg' },
     { id: 2, name: 'Clownfish', text: '(Amphiprioninae)', price: '$15', image: 'src/assets/images/clownfish.jpg' },
@@ -14,11 +15,13 @@ function FishPage({ onProductAdd }) {
     <div className="content">
       <h1>Fancy Fish</h1>
       <p>blub blub</p>
+
+
+
       {fishData.map(fish => (
         // eslint-disable-next-line react/jsx-key
         <Product
           productId={fish.id}
-          onProductAdd={onProductAdd}
           productName={fish.name}
           productText={fish.text}
           productPrice={fish.price}

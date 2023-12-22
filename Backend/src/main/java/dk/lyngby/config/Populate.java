@@ -24,6 +24,20 @@ public class Populate {
             em.persist(fish3);
             em.persist(fish4);
             em.persist(fish5);
+
+            Product jellyfish = new Product("Moon Jellyfish", "Invertebrates", "Aurelia aurita", 20, "https://www.eopugetsound.org/sites/default/files/styles/magazinewidth_592px/public/topical_article/images/moon_jellyfish.jpg?itok=Esreg6zX");
+            Product anemone = new Product("Anemone", "Invertebrates", "Rose Bubble Tip", 140, "https://static.wixstatic.com/media/f14946_e93a30d15ec24361805c00b3f721ddd1~mv2.jpg/v1/fill/w_2034,h_2036,al_c,q_85/f14946_e93a30d15ec24361805c00b3f721ddd1~mv2.jpg");
+            Product snail = new Product("Snail", "Invertebrates", "Astraea Turbo", 2, "https://www.abyssaquatics.co.uk/wp-content/uploads/2020/10/100073-1.jpg");
+            Product shrimp = new Product("Fire Blood Shrimp", "Invertebrates", "Lysmata debelius", 65, "https://www.oceanaquarium.com/wp-content/uploads/2012/12/35_fire_shrimp.jpg");
+            Product urchin = new Product("Blue Tuxedo Urchin", "Invertebrates", "Mespilia sp.", 29, "https://www.discountcoral.com/cdn/shop/products/BlueTuxedoUrchin.jpg?v=1661358001");
+
+            em.persist(jellyfish);
+            em.persist(anemone);
+            em.persist(snail);
+            em.persist(shrimp);
+            em.persist(urchin);
+
+
             em.getTransaction().commit();
         }
     }

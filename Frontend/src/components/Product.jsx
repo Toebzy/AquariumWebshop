@@ -2,7 +2,7 @@ import { useState } from "react";
 import facade from '../util/apiFacade';
 
 function Product(props) {
-  const { productId, productName, onProductAdd, productText, productPrice, productImage } = props;
+  const { productId, productName, productText, productPrice, productImage } = props;
   const [isSentToCart, setIsSentToCart] = useState(false);
 
   const handleClick = () => {
