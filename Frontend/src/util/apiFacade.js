@@ -70,7 +70,7 @@ function apiFacade()
           });
           
       };
-      const readCartId = (user) => {
+      const readCartId = (user, onSuccess, onError) => {
          return fetchData( "auth/cartid/"+user, "GET")
          .then((cartId) => {
              setCartId(cartId);
