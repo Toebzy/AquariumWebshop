@@ -18,7 +18,6 @@ function CartPage({ isAdmin }) {
                 }
             );
         };
-
         fetchCart();
     }, []); // The empty dependency array ensures the effect runs only once when the component mounts
 

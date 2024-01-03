@@ -52,9 +52,7 @@ const Slideshow = () => {
             />
           ))}
         </div>
-
       </div>
-
       <div className="slideshow-images">
         {carouselData.map((data, index) => (
           <img
@@ -76,7 +74,6 @@ const Slideshow = () => {
           ))}
         </div>
       </div>
-
       <div className="circle-navigation">
         {[0, 1, 2, 3].map((index) => (
           <div
