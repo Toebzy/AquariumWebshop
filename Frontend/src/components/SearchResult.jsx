@@ -1,8 +1,8 @@
 import { SearchContext } from "../components/SearchProvider";
 import { searchItems, allItems } from '../components/Search';
 import Product from "../components/Product"; 
-import { useState, useEffect, useContext } from 'react';
-import { NavLink, Outlet } from "react-router-dom"
+import { useContext } from 'react';
+import { Outlet } from "react-router-dom"
 
 function SearchResult(){
     const { searchQuery } = useContext(SearchContext);

@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { SearchContext } from "../components/SearchProvider";
 import Product from "../components/Product";
 
 function InvertebratesPage() {

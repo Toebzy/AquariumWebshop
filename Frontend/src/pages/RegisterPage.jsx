@@ -1,7 +1,6 @@
 import { useState } from "react";
 import facade from "../util/apiFacade";
 import { useNavigate } from 'react-router-dom';
-import Navbar from "../components/Navbar";
 
 const RegisterPage = () => {
   const init = { username: '', password: '' };

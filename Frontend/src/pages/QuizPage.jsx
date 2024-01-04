@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { fishQuiz } from '../assets/questions';
 import Product from "../components/Product";
-import { Link } from 'react-router-dom';
 
 const Quiz = () => {
   const [showResult, setShowResult] = useState(false);

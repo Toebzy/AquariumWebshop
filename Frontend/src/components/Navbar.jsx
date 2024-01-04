@@ -80,14 +80,19 @@ function Navbar() {
                 <div className="header_background">
                 <img className="bubble bubble_left" src="src\assets\images\bubbles.gif" width="10%" height="190" ></img>
                 <img className="bubble bubble_right" src="src\assets\images\bubbles.gif" width="10%" height="190" ></img>
-                    <div className="container container--1400">
-                        <div className="header_inner">
+                    <div className="container">
+                        <div className="row justify-content-md-center header_inner">
+                            <div className="col logo-col">
+                            <div className="logo-link">
                             <NavLink to="/">
-                                <div className="logo">
-                                    <img src="src\assets\images\logo.gif" width="140" ></img>
+                                <div className="logo ">
+                                    <img src="src\assets\images\logo.gif"></img>
                                 </div>
                                 
                             </NavLink>
+                            </div></div>
+                            <div className="col-5">
+                                
                             <div className="search_and_nav">
                                <SearchComponent />
                                 <nav className="navigation">
@@ -100,7 +105,9 @@ function Navbar() {
                                     </ul>
                                 </nav>
                             </div>
-                            <div className="header_buttons">
+                            </div>
+                            <div className="col">                           
+                                    <div className="header_buttons">
                                 {isLoggedIn && facade.getUserRoles() === 'user' && (
                                     <NavLink to="user">
                                     <button className="header_button">
@@ -132,8 +139,7 @@ function Navbar() {
                                     {isLoggedIn ? <svg xmlns="http://www.w3.org/2000/svg" className="header__button-icon" viewBox="0 0 576 512"><path d="M320 32c0-9.9-4.5-19.2-12.3-25.2S289.8-1.4 280.2 1l-179.9 45C79 51.3 64 70.5 64 92.5V448H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H96 288h32V480 32zM256 256c0 17.7-10.7 32-24 32s-24-14.3-24-32s10.7-32 24-32s24 14.3 24 32zm96-128h96V480c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H512V128c0-35.3-28.7-64-64-64H352v64z" /></svg> : <svg xmlns="http://www.w3.org/2000/svg" className="header__button-icon" viewBox="0 0 576 512"><path d="M180.5 141.5C219.7 108.5 272.6 80 336 80s116.3 28.5 155.5 61.5c39.1 33 66.9 72.4 81 99.8c4.7 9.2 4.7 20.1 0 29.3c-14.1 27.4-41.9 66.8-81 99.8C452.3 403.5 399.4 432 336 432s-116.3-28.5-155.5-61.5c-16.2-13.7-30.5-28.5-42.7-43.1L48.1 379.6c-12.5 7.3-28.4 5.3-38.7-4.9S-3 348.7 4.2 336.1L50 256 4.2 175.9c-7.2-12.6-5-28.4 5.3-38.6s26.1-12.2 38.7-4.9l89.7 52.3c12.2-14.6 26.5-29.4 42.7-43.1zM448 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" /></svg>}
                                     <span className="button_text">{isLoggedIn ? 'Log out' : 'Log in'}</span>
                                 </button>
-                            </div>
-                            {showLoginModal && (
+                                 {showLoginModal && (
                                 <div className="login-modal">
                                     <div className="arrow"></div>
                                     <form className="login_form" onChange={onChange}>
@@ -149,8 +155,14 @@ function Navbar() {
                                     </form>
                                 </div>
                             )}
+                            </div>
+                           
                         </div>
-                    </div>
+                            </div>
+                        </div>
+
+                            
+                        
                 </div>
                 <div className="under_header_background">
                     <div className="container">
