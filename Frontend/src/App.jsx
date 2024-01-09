@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect, useContext } from 'react';
-import { BrowserRouter, Route, Routes, RouterProvider, createBrowserRouter, createRoutesFromElements, NavLink, useLocation} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation} from 'react-router-dom';
 import MainLayout from './components/MainLayout';
 import UserPage from './pages/UserPage';
 import AdminPage from './pages/AdminPage';
@@ -32,7 +32,6 @@ function Inner(){
   const location = useLocation();
   const { clearSearch } = useContext(SearchContext);
 
-  const [isAdmin, setIsAdmin] = useState(false);
   // Listen for route changes and clear search query
   useEffect(() => {
     // Call clearSearch when the route changes
@@ -44,15 +43,15 @@ function Inner(){
   return(
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route path="user" element={<UserPage isAdmin={isAdmin} />} />
-        <Route path="admin" element={<AdminPage isAdmin={isAdmin} />} />
-        <Route path="tanks" element={<TanksPage isAdmin={isAdmin} />} />
-        <Route path="fish" element={<FishPage isAdmin={isAdmin} />} />
-        <Route path="invertebrates" element={<InvertebratesPage isAdmin={isAdmin} />} />
-        <Route path="supplies" element={<SuppliesPage isAdmin={isAdmin} />} />
-        <Route path="quiz" element={<QuizPage isAdmin={isAdmin} />} />
-        <Route path="register" element={<RegisterPage isAdmin={isAdmin} />} />
-        <Route path="cart" element={<CartPage isAdmin={isAdmin} />} />
+        <Route path="user" element={<UserPage/>} />
+        <Route path="admin" element={<AdminPage/>} />
+        <Route path="tanks" element={<TanksPage/>} />
+        <Route path="fish" element={<FishPage/>} />
+        <Route path="invertebrates" element={<InvertebratesPage/>} />
+        <Route path="supplies" element={<SuppliesPage/>} />
+        <Route path="quiz" element={<QuizPage/>} />
+        <Route path="register" element={<RegisterPage/>} />
+        <Route path="cart" element={<CartPage/>} />
         <Route path="/" element={<HomePage />}>
         </Route>
         <Route path="*" element={<ErrorPage />}/>

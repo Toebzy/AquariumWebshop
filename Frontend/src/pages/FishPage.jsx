@@ -14,8 +14,8 @@ function FishPage() {
       <h1>Fancy Fish</h1>
       <p>blub blub</p>
       {fishData.map(fish => (
-        // eslint-disable-next-line react/jsx-key
         <Product
+          key={fish.name}
           productId={fish.id}
           productName={fish.name}
           productText={fish.text}

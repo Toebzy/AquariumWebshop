@@ -1,9 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import facade from '../util/apiFacade';
-import { SearchContext } from "../components/SearchProvider";
-
-function UserPage({ isAdmin }) {
-  const { searchQuery } = useContext(SearchContext);
+function UserPage() {
   const [cart, setCart] = useState(null);
 
   useEffect(() => {

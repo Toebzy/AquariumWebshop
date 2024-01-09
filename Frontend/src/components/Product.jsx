@@ -21,7 +21,6 @@ function Product(props) {
   }
 
   return (
-
         <li className="product-list_product-item">
             <div className={`product-card`}>
                 <div className="product-card_image">

@@ -74,7 +74,6 @@ function apiFacade()
          return fetchData( "auth/cartid/"+user, "GET")
          .then((cartId) => {
              setCartId(cartId);
-             console.log(getCartId()+"test 2")
          })
          .catch((error) => {
              console.error("Error fetching cart:", error);

@@ -16,7 +16,7 @@ public class Populate {
             Product fish2 = new Product("Clownfish", "Fish", "Amphiprioninae", 15,"https://www.starfish.ch/photos/fishes-Fische/damselfishes-Riffbarsche/Amphiprion-ocellaris11.jpg");
             Product fish3 = new Product("Royal Gramma", "Fish", "Gramma loreto", 25,"https://freakincorals.com/cdn/shop/products/lg_72329_Royal_Gramma_Basslet_576x.jpg?v=1601919573");
             Product fish4 = new Product("Blue Tang", "Fish", "Paracanthurus hepatus", 30,"https://www.monaconatureencyclopedia.com/wp-content/uploads/2008/08/1-Paracanthurus-hepatus-%C2%A9-Giuseppe-Mazza.jpg");
-            Product fish5 = new Product("Garryfish", "Fish", "Garryfish", 4,"http://localhost:5173/src/assets/images/garryfish.png");
+            Product fish5 = new Product("Garryfish", "Fish", "Garryfish", 4,"http://localhost:5173/src/assets/images/garryfish.jpg");
 
 
             em.persist(fish1);
