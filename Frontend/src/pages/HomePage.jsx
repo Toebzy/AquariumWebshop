@@ -21,6 +21,7 @@ function HomePage({ onProductAdd }) {
                         {fishData.map(fish => (
                             // eslint-disable-next-line react/jsx-key
                             <Product
+                                key={fish.id}
                                 productId={fish.id}
                                 onProductAdd={onProductAdd}
                                 productName={fish.name}
