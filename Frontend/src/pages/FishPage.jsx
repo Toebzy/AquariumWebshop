@@ -8,7 +8,7 @@ function FishPage() {
     { id: 4, name: 'Blue Tang', text: '(Paracanthurus hepatus)', price: '$30', image: 'src/assets/images/bluetang.jpeg' },
     { id: 5, name: 'Garryfish', text: '(Garryfish)', price: '$4', image: 'src/assets/images/garryfish.jpg' },
   ];
-
+  
   return (
     <div className="content">
       <h1>Fancy Fish</h1>

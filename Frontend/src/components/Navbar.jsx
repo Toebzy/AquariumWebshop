@@ -67,11 +67,11 @@ function Navbar() {
           const intervalId = setInterval(() => {
             // Change the fun fact every 10 seconds
             setCurrentFunFactIndex((prevIndex) =>
-              prevIndex === funFactsList.length - 1 ? 0 : prevIndex + 1
+              prevIndex === funFactsList.length - 1 ? 0 : prevIndex + 1 //Hvis prevIndex equals sidste index, set index til 0 ellers +1
             );
           }, 10000);
       
-          return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+          return () => clearInterval(intervalId); // Cleanup
         }, [funFactsList.length]);
 
     return (
